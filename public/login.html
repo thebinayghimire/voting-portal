@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login – Elite Grand School Voting</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Elite Grand School</h1>
+    <p class="subtitle">Student Voting Portal</p>
+  </header>
+
+  <main class="center-card">
+    <h2>Student Login</h2>
+    <p>Enter your assigned Student ID and password to access the voting page.</p>
+
+    <div id="status-banner" class="info-msg hidden"></div>
+    <div id="error-msg" class="error-msg hidden"></div>
+
+    <div class="form-group">
+      <label for="student-id">Student ID</label>
+      <input type="text" id="student-id" placeholder="e.g. STU001" autocomplete="off" />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter your password" />
+    </div>
+
+    <button id="login-btn" class="btn">Login</button>
+
+    <p class="small-text">Forgot your credentials? Contact your class teacher.</p>
+  </main>
+
+  <footer>
+    <p>Elite Grand School &copy; 2025. All rights reserved.</p>
+  </footer>
+
+  <script src="js/login.js"></script>
+</body>
+</html>

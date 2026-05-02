@@ -1,0 +1,265 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f7f7f8;
+  color: #111;
+  line-height: 1.5;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* Card */
+.center-card {
+  max-width: 420px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+}
+
+/* Text */
+h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+h3 {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Instructions */
+.instructions {
+  margin: 1.2rem 0;
+}
+
+.instructions ol {
+  padding-left: 1.2rem;
+}
+
+.instructions li {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+/* Forms */
+.form-group {
+  margin: 1rem 0;
+}
+
+label {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+  color: #555;
+}
+
+input {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+input:focus {
+  border-color: #111;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 1rem;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn-small {
+  width: auto;
+  padding: 0.4rem 0.7rem;
+  font-size: 0.8rem;
+}
+
+.btn-danger {
+  background: #d92d20;
+}
+
+/* Messages */
+.error-msg {
+  background: #ffecec;
+  color: #d92d20;
+  padding: 0.6rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 0.8rem;
+}
+
+.success-msg {
+  background: #e8f7ee;
+  color: #1a7f37;
+  padding: 0.6rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Voting */
+.vote-section {
+  margin-top: 1rem;
+}
+
+.candidates-list {
+  margin-top: 0.5rem;
+}
+
+.candidate-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+/* Admin */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.admin-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.stats-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  flex: 1;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+}
+
+.stat-number {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+/* Tables */
+.results-section {
+  margin-top: 1.5rem;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.results-table th,
+.results-table td {
+  text-align: left;
+  padding: 0.6rem;
+  border-bottom: 1px solid #eee;
+}
+
+.results-table th {
+  font-weight: 500;
+  color: #666;
+}
+
+.top-row {
+  font-weight: 600;
+}
+
+.loading-text {
+  text-align: center;
+  color: #888;
+}
+
+/* Small text */
+.small-text {
+  margin-top: 0.8rem;
+  font-size: 0.75rem;
+  color: #888;
+}
+/* Hardened additions for v2 */
+.hidden { display: none !important; }
+
+.info-msg {
+  background: #eef6ff;
+  color: #084c8d;
+  border: 1px solid #b6d6f3;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.btn:disabled,
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}

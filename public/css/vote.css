@@ -1,0 +1,347 @@
+*,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: #f4f2ee;
+        color: #1a1a1a;
+        min-height: 100vh;
+      }
+
+      header {
+        background: #1a1a1a;
+        color: #fff;
+        padding: 1.2rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header h1 {
+        font-family: "DM Serif Display", serif;
+        font-size: 1.3rem;
+        font-weight: 400;
+      }
+
+      header .badge {
+        font-size: 0.72rem;
+        background: #fff;
+        color: #1a1a1a;
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .page-wrap {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 2.5rem 1.5rem 4rem;
+      }
+
+      .page-title {
+        font-family: "DM Serif Display", serif;
+        font-size: 2rem;
+        font-weight: 400;
+        margin-bottom: 0.4rem;
+      }
+
+      .page-sub {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 2rem;
+      }
+
+      .grade-block {
+        background: #fff;
+        border-radius: 14px;
+        padding: 1.4rem 1.6rem;
+        margin-bottom: 2rem;
+        border: 1px solid #e4e0d8;
+      }
+
+      .grade-block label {
+        display: block;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: #888;
+        margin-bottom: 0.6rem;
+      }
+
+      .grade-block select {
+        width: 100%;
+        padding: 0.7rem 1rem;
+        border: 1.5px solid #e4e0d8;
+        border-radius: 8px;
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.95rem;
+        background: #faf9f7;
+        color: #1a1a1a;
+        cursor: pointer;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+      }
+
+      .grade-block select:focus {
+        outline: none;
+        border-color: #1a1a1a;
+      }
+
+      .section-label {
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: #888;
+        margin-bottom: 0.3rem;
+      }
+
+      .section-title {
+        font-family: "DM Serif Display", serif;
+        font-size: 1.35rem;
+        font-weight: 400;
+        margin-bottom: 0.2rem;
+      }
+
+      .section-desc {
+        font-size: 0.85rem;
+        color: #777;
+        margin-bottom: 1.2rem;
+      }
+
+      .vote-section {
+        margin-bottom: 2.5rem;
+      }
+
+      .candidates-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1rem;
+      }
+
+      .candidate-card {
+        background: #fff;
+        border: 2px solid #e4e0d8;
+        border-radius: 14px;
+        overflow: hidden;
+        cursor: pointer;
+        transition:
+          border-color 0.15s,
+          transform 0.15s;
+        position: relative;
+        user-select: none;
+      }
+
+      .candidate-card:hover {
+        border-color: #aaa;
+        transform: translateY(-2px);
+      }
+      .candidate-card.selected {
+        border-color: #1a1a1a;
+      }
+
+      .candidate-card input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .candidate-photo {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        background: #ede9e2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .candidate-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .avatar-initials {
+        font-family: "DM Serif Display", serif;
+        font-size: 2.5rem;
+        color: #bbb;
+      }
+
+      .check-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 28px;
+        height: 28px;
+        background: #1a1a1a;
+        border-radius: 50%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .check-badge svg {
+        width: 14px;
+        height: 14px;
+        stroke: #fff;
+        fill: none;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .candidate-card.selected .check-badge {
+        display: flex;
+      }
+
+      .candidate-info {
+        padding: 0.9rem 1rem;
+      }
+
+      .candidate-name {
+        font-size: 0.92rem;
+        font-weight: 600;
+        margin-bottom: 0.15rem;
+      }
+
+      .candidate-grade {
+        font-size: 0.78rem;
+        color: #888;
+      }
+
+      .empty-state {
+        background: #fff;
+        border: 1px dashed #ccc;
+        border-radius: 14px;
+        padding: 2.5rem;
+        text-align: center;
+        color: #aaa;
+        font-size: 0.88rem;
+        grid-column: 1 / -1;
+      }
+
+      .submit-block {
+        margin-top: 1rem;
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: 0.9rem;
+        background: #1a1a1a;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: opacity 0.15s;
+      }
+
+      .submit-btn:hover {
+        opacity: 0.85;
+      }
+      .submit-btn:disabled {
+        opacity: 0.35;
+        cursor: not-allowed;
+      }
+
+      .submit-note {
+        text-align: center;
+        font-size: 0.78rem;
+        color: #aaa;
+        margin-top: 0.6rem;
+      }
+
+      .msg {
+        border-radius: 10px;
+        padding: 0.8rem 1rem;
+        font-size: 0.88rem;
+        margin-bottom: 1.2rem;
+        display: none;
+      }
+
+      .msg.error {
+        background: #ffecec;
+        color: #c0392b;
+      }
+      .msg.success {
+        background: #eafaf1;
+        color: #1a7f37;
+      }
+
+      .success-screen {
+        display: none;
+        text-align: center;
+        padding: 5rem 2rem;
+      }
+
+      .success-icon {
+        width: 64px;
+        height: 64px;
+        background: #1a1a1a;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+      }
+
+      .success-icon svg {
+        width: 30px;
+        height: 30px;
+        stroke: #fff;
+        fill: none;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .success-screen h2 {
+        font-family: "DM Serif Display", serif;
+        font-size: 2rem;
+        font-weight: 400;
+        margin-bottom: 0.5rem;
+      }
+
+      .success-screen p {
+        color: #777;
+        font-size: 0.9rem;
+      }
+
+      footer {
+        text-align: center;
+        padding: 1.5rem;
+        font-size: 0.78rem;
+        color: #aaa;
+      }
+/* v2 helpers — replace old "set element.style.display" pattern */
+.hidden { display: none !important; }
+
+/* Override legacy display:none so we can use the .hidden class to toggle */
+#error-msg { display: block; }
+#error-msg.hidden { display: none !important; }
+#window-banner { display: block; }
+#window-banner.hidden { display: none !important; }
+#success-screen { display: block; }
+#success-screen.hidden { display: none !important; }
+
+.msg.info {
+  background: #eef6ff;
+  color: #084c8d;
+}
+
+button:disabled { opacity: 0.55; cursor: not-allowed; }

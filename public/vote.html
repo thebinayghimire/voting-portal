@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vote – Elite Grand School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/vote.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Elite Grand School</h1>
+      <span class="badge">Voting Portal</span>
+    </header>
+
+    <div class="page-wrap">
+      <div id="vote-main">
+        <h1 class="page-title">Cast Your Vote</h1>
+        <p class="page-sub">
+          Select your grade, then choose one candidate for each position.
+        </p>
+
+        <div id="error-msg" class="msg error hidden"></div>
+        <div id="window-banner" class="msg info hidden"></div>
+
+        <div class="grade-block">
+          <label for="grade-select">Your Grade</label>
+          <select id="grade-select">
+            <option value="">— Select your grade —</option>
+            <option>Grade 1</option>
+            <option>Grade 2</option>
+            <option>Grade 3</option>
+            <option>Grade 4</option>
+            <option>Grade 5</option>
+            <option>Grade 6</option>
+            <option>Grade 7</option>
+            <option>Grade 8</option>
+            <option>Grade 9</option>
+            <option>Grade 10</option>
+          </select>
+        </div>
+
+        <div class="vote-section">
+          <p class="section-label">Position 1</p>
+          <h2 class="section-title">House Captain</h2>
+          <p class="section-desc">Select one candidate for House Captain.</p>
+          <div id="house-candidates" class="candidates-grid">
+            <div class="empty-state">
+              Select your grade above to see candidates.
+            </div>
+          </div>
+        </div>
+
+        <div class="vote-section">
+          <p class="section-label">Position 2</p>
+          <h2 class="section-title">School Captain</h2>
+          <p class="section-desc">Select one candidate for School Captain.</p>
+          <div id="school-candidates" class="candidates-grid">
+            <div class="empty-state">
+              Select your grade above to see candidates.
+            </div>
+          </div>
+        </div>
+
+        <div class="submit-block">
+          <button class="submit-btn" id="submit-btn" disabled>
+            Submit My Vote
+          </button>
+          <p class="submit-note">
+            Once submitted, your vote cannot be changed.
+          </p>
+        </div>
+      </div>
+
+      <div class="success-screen hidden" id="success-screen">
+        <div class="success-icon">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
+        </div>
+        <h2>Vote Submitted!</h2>
+        <p>
+          Thank you for participating. Your vote has been recorded successfully.
+        </p>
+      </div>
+    </div>
+
+    <footer>Elite Grand School &copy; 2025. All rights reserved.</footer>
+
+    <script src="js/vote.js"></script>
+  </body>
+</html>

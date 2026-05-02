@@ -1,0 +1,19 @@
+# Secrets — NEVER commit
+.env
+
+# Dependencies
+node_modules/
+
+# Runtime data (created when server runs)
+votes.db
+votes.db-shm
+votes.db-wal
+sessions/
+backups/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log

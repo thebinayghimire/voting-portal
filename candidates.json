@@ -1,0 +1,53 @@
+{
+  "candidates": [
+    { "candidate_id": "G1-HC001", "name": "Aarav Sharma",    "category": "House",  "grade": "Grade 1", "photo": "photos/G1-HC001.jpg" },
+    { "candidate_id": "G1-HC002", "name": "Priya Thapa",     "category": "House",  "grade": "Grade 1", "photo": "photos/G1-HC002.jpg" },
+    { "candidate_id": "G1-SC001", "name": "Rohan Gurung",    "category": "School", "grade": "Grade 1", "photo": "photos/G1-SC001.jpg" },
+    { "candidate_id": "G1-SC002", "name": "Sneha Karki",     "category": "School", "grade": "Grade 1", "photo": "photos/G1-SC002.jpg" },
+
+    { "candidate_id": "G2-HC001", "name": "Bibek Shrestha",  "category": "House",  "grade": "Grade 2", "photo": "photos/G2-HC001.jpg" },
+    { "candidate_id": "G2-HC002", "name": "Anisha Rai",      "category": "House",  "grade": "Grade 2", "photo": "photos/G2-HC002.jpg" },
+    { "candidate_id": "G2-SC001", "name": "Suman Tamang",    "category": "School", "grade": "Grade 2", "photo": "photos/G2-SC001.jpg" },
+    { "candidate_id": "G2-SC002", "name": "Kriti Basnet",    "category": "School", "grade": "Grade 2", "photo": "photos/G2-SC002.jpg" },
+
+    { "candidate_id": "G3-HC001", "name": "Dipesh Magar",    "category": "House",  "grade": "Grade 3", "photo": "photos/G3-HC001.jpg" },
+    { "candidate_id": "G3-HC002", "name": "Nisha Limbu",     "category": "House",  "grade": "Grade 3", "photo": "photos/G3-HC002.jpg" },
+    { "candidate_id": "G3-SC001", "name": "Rajan Khadka",    "category": "School", "grade": "Grade 3", "photo": "photos/G3-SC001.jpg" },
+    { "candidate_id": "G3-SC002", "name": "Pooja Adhikari",  "category": "School", "grade": "Grade 3", "photo": "photos/G3-SC002.jpg" },
+
+    { "candidate_id": "G4-HC001", "name": "Anil Bhandari",   "category": "House",  "grade": "Grade 4", "photo": "photos/G4-HC001.jpg" },
+    { "candidate_id": "G4-HC002", "name": "Sabina Poudel",   "category": "House",  "grade": "Grade 4", "photo": "photos/G4-HC002.jpg" },
+    { "candidate_id": "G4-SC001", "name": "Nabin Ghimire",   "category": "School", "grade": "Grade 4", "photo": "photos/G4-SC001.jpg" },
+    { "candidate_id": "G4-SC002", "name": "Sita Pandey",     "category": "School", "grade": "Grade 4", "photo": "photos/G4-SC002.jpg" },
+
+    { "candidate_id": "G5-HC001", "name": "Bikash Chhetri",  "category": "House",  "grade": "Grade 5", "photo": "photos/G5-HC001.jpg" },
+    { "candidate_id": "G5-HC002", "name": "Manisha Koirala", "category": "House",  "grade": "Grade 5", "photo": "photos/G5-HC002.jpg" },
+    { "candidate_id": "G5-SC001", "name": "Suraj Dahal",     "category": "School", "grade": "Grade 5", "photo": "photos/G5-SC001.jpg" },
+    { "candidate_id": "G5-SC002", "name": "Rina Maharjan",   "category": "School", "grade": "Grade 5", "photo": "photos/G5-SC002.jpg" },
+
+    { "candidate_id": "G6-HC001", "name": "Prabin Shrestha", "category": "House",  "grade": "Grade 6", "photo": "photos/G6-HC001.jpg" },
+    { "candidate_id": "G6-HC002", "name": "Alisha Joshi",    "category": "House",  "grade": "Grade 6", "photo": "photos/G6-HC002.jpg" },
+    { "candidate_id": "G6-SC001", "name": "Dinesh Rai",      "category": "School", "grade": "Grade 6", "photo": "photos/G6-SC001.jpg" },
+    { "candidate_id": "G6-SC002", "name": "Puja Thapa",      "category": "School", "grade": "Grade 6", "photo": "photos/G6-SC002.jpg" },
+
+    { "candidate_id": "G7-HC001", "name": "Sandip Tamang",   "category": "House",  "grade": "Grade 7", "photo": "photos/G7-HC001.jpg" },
+    { "candidate_id": "G7-HC002", "name": "Laxmi Gurung",    "category": "House",  "grade": "Grade 7", "photo": "photos/G7-HC002.jpg" },
+    { "candidate_id": "G7-SC001", "name": "Ramesh Magar",    "category": "School", "grade": "Grade 7", "photo": "photos/G7-SC001.jpg" },
+    { "candidate_id": "G7-SC002", "name": "Kabita Limbu",    "category": "School", "grade": "Grade 7", "photo": "photos/G7-SC002.jpg" },
+
+    { "candidate_id": "G8-HC001", "name": "Sagar Bista",     "category": "House",  "grade": "Grade 8", "photo": "photos/G8-HC001.jpg" },
+    { "candidate_id": "G8-HC002", "name": "Anjali Karki",    "category": "House",  "grade": "Grade 8", "photo": "photos/G8-HC002.jpg" },
+    { "candidate_id": "G8-SC001", "name": "Nirajan Panta",   "category": "School", "grade": "Grade 8", "photo": "photos/G8-SC001.jpg" },
+    { "candidate_id": "G8-SC002", "name": "Sunita Dhakal",   "category": "School", "grade": "Grade 8", "photo": "photos/G8-SC002.jpg" },
+
+    { "candidate_id": "G9-HC001", "name": "Rajesh Upreti",   "category": "House",  "grade": "Grade 9", "photo": "photos/G9-HC001.jpg" },
+    { "candidate_id": "G9-HC002", "name": "Sarita Subedi",   "category": "House",  "grade": "Grade 9", "photo": "photos/G9-HC002.jpg" },
+    { "candidate_id": "G9-SC001", "name": "Gopal Bhattarai", "category": "School", "grade": "Grade 9", "photo": "photos/G9-SC001.jpg" },
+    { "candidate_id": "G9-SC002", "name": "Rupa Khatri",     "category": "School", "grade": "Grade 9", "photo": "photos/G9-SC002.jpg" },
+
+    { "candidate_id": "G10-HC001", "name": "Suresh Neupane", "category": "House",  "grade": "Grade 10", "photo": "photos/G10-HC001.jpg" },
+    { "candidate_id": "G10-HC002", "name": "Deepa Shrestha", "category": "House",  "grade": "Grade 10", "photo": "photos/G10-HC002.jpg" },
+    { "candidate_id": "G10-SC001", "name": "Binod Acharya",  "category": "School", "grade": "Grade 10", "photo": "photos/G10-SC001.jpg" },
+    { "candidate_id": "G10-SC002", "name": "Maya Tamang",    "category": "School", "grade": "Grade 10", "photo": "photos/G10-SC002.jpg" }
+  ]
+}
