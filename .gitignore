@@ -10,6 +10,9 @@ votes.db-shm
 votes.db-wal
 sessions/
 backups/
+credentials-out/
+data/
+*.bak
 
 # OS / editor
 .DS_Store

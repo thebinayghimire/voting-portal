@@ -1,4 +1,4 @@
-// login.js — student login. Uses session cookie (no localStorage).
+// login.js - student login. Uses session cookie (no localStorage).
 
 const $ = (id) => document.getElementById(id);
 
@@ -33,7 +33,7 @@ async function checkElectionStatus() {
       loginBtn.disabled = true;
     }
   } catch (e) {
-    // If status check fails, let them try to log in anyway — the server
+    // If status check fails, let them try to log in anyway - the server
     // will reject if outside the window.
   }
 }

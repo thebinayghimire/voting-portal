@@ -3,27 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin – Elite Grand School</title>
+    <title>Admin - Elite Grand School</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/admin.css" />
   </head>
   <body>
     <header>
-      <h1>Elite Grand School</h1>
+      <a class="brand-lockup" href="index.html" aria-label="Elite Grand School home">
+        <img src="photos/elitelogo.jpg" alt="" class="brand-logo" />
+        <span class="brand-copy">
+          <span class="brand-title">Elite Grand School</span>
+          <span class="brand-subtitle">Administrative Dashboard</span>
+        </span>
+      </a>
       <div class="header-right">
         <span class="header-badge hidden" id="header-badge">Admin</span>
         <button class="logout-btn hidden" id="logout-btn">Logout</button>
       </div>
     </header>
 
-    <!-- Login -->
     <div id="login-screen">
       <div class="login-card">
+        <div class="login-logo-wrap">
+          <img src="photos/elitelogo.jpg" alt="Elite Grand School" class="login-logo" />
+        </div>
         <h2>Admin Login</h2>
         <p>Restricted to authorized personnel only.</p>
         <div class="err-msg hidden" id="login-error"></div>
@@ -39,7 +48,6 @@
       </div>
     </div>
 
-    <!-- Dashboard -->
     <div id="dashboard" class="hidden">
       <div class="dash-wrap">
         <div class="dash-top">
@@ -48,86 +56,57 @@
             <p class="dash-sub" id="last-updated">Loading...</p>
             <p class="dash-sub" id="election-status"></p>
           </div>
-          <div>
-            <button class="refresh-btn" id="refresh-btn">↻ Refresh</button>
-          </div>
+          <button class="refresh-btn" id="refresh-btn">Refresh</button>
         </div>
 
-        <!-- Tab nav -->
         <div class="tab-bar">
           <button class="tab-btn active" data-tab="results">Results</button>
           <button class="tab-btn" data-tab="turnout">Live Turnout</button>
           <button class="tab-btn" data-tab="audit">Audit Log</button>
         </div>
 
-        <!-- RESULTS TAB -->
         <div class="tab-pane" id="tab-results">
           <div class="results-locked-banner hidden" id="results-locked">
             Results are locked until voting closes.
           </div>
 
-          <!-- Stats -->
           <div class="stats-grid">
             <div class="stat-card">
-              <div class="stat-label">Total Votes Cast</div>
-              <div class="stat-value" id="stat-votes">–</div>
+              <div class="stat-label">Students Voted</div>
+              <div class="stat-value" id="stat-votes">-</div>
             </div>
             <div class="stat-card">
               <div class="stat-label">Registered Students</div>
-              <div class="stat-value" id="stat-students">–</div>
+              <div class="stat-value" id="stat-students">-</div>
             </div>
             <div class="stat-card">
               <div class="stat-label">Voter Turnout</div>
-              <div class="stat-value" id="stat-turnout">–</div>
+              <div class="stat-value" id="stat-turnout">-</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Ballots Recorded</div>
+              <div class="stat-value" id="stat-ballots">-</div>
+              <div class="stat-note" id="stat-ballots-note">per voter</div>
             </div>
             <div class="stat-card">
               <div class="stat-label">Yet to Vote</div>
-              <div class="stat-value" id="stat-remaining">–</div>
+              <div class="stat-value" id="stat-remaining">-</div>
               <div class="stat-note">students pending</div>
             </div>
           </div>
 
-          <!-- Grade overview -->
           <div class="section-card">
             <div class="panel-label">Overview by Grade</div>
             <div class="panel-title">All Grades</div>
             <div class="grade-chips" id="grade-chips"></div>
           </div>
 
-          <!-- Grade filter -->
           <div class="grade-bar">
-            <label for="grade-select">Viewing</label>
-            <select id="grade-select">
-              <option value="all">All Grades (combined)</option>
-              <option>Grade 1</option>
-              <option>Grade 2</option>
-              <option>Grade 3</option>
-              <option>Grade 4</option>
-              <option>Grade 5</option>
-              <option>Grade 6</option>
-              <option>Grade 7</option>
-              <option>Grade 8</option>
-              <option>Grade 9</option>
-              <option>Grade 10</option>
-            </select>
             <span class="turnout-text" id="turnout-text"></span>
           </div>
 
-          <!-- Results -->
-          <div class="results-grid">
-            <div class="result-panel">
-              <div class="panel-label">Position 1</div>
-              <div class="panel-title">House Captain</div>
-              <div id="house-results"></div>
-            </div>
-            <div class="result-panel">
-              <div class="panel-label">Position 2</div>
-              <div class="panel-title">School Captain</div>
-              <div id="school-results"></div>
-            </div>
-          </div>
+          <div class="results-grid" id="results-grid"></div>
 
-          <!-- Students -->
           <div class="section-card">
             <div class="students-header">
               <div>
@@ -143,7 +122,7 @@
             <div class="table-wrap">
               <table class="students-table">
                 <thead>
-                  <tr><th>Student ID</th><th>Status</th></tr>
+                  <tr><th>Student ID</th><th>Grade</th><th>Status</th></tr>
                 </thead>
                 <tbody id="students-body"></tbody>
               </table>
@@ -151,35 +130,33 @@
           </div>
         </div>
 
-        <!-- TURNOUT TAB (live during voting) -->
         <div class="tab-pane hidden" id="tab-turnout">
           <div class="section-card">
             <div class="panel-label">Live</div>
             <div class="panel-title">Voting Activity</div>
             <p class="dash-sub">
-              Updates show how many students have voted. Vote choices are NOT visible until voting closes.
+              Updates show how many students have voted. Vote choices are not visible until voting closes.
             </p>
             <div class="stats-grid" style="margin-top: 1rem;">
               <div class="stat-card">
                 <div class="stat-label">Voted Now</div>
-                <div class="stat-value" id="live-voted">–</div>
+                <div class="stat-value" id="live-voted">-</div>
               </div>
               <div class="stat-card">
                 <div class="stat-label">Total Students</div>
-                <div class="stat-value" id="live-total">–</div>
+                <div class="stat-value" id="live-total">-</div>
               </div>
             </div>
             <div class="grade-chips" id="live-grade-chips" style="margin-top: 1rem;"></div>
           </div>
         </div>
 
-        <!-- AUDIT TAB -->
         <div class="tab-pane hidden" id="tab-audit">
           <div class="section-card">
             <div class="panel-label">Security</div>
             <div class="panel-title">Audit Log (latest 200 events)</div>
             <p class="dash-sub">
-              Records who logged in, who voted (without revealing what), and any rejected attempts.
+              Records who logged in, who voted without revealing selections, and any rejected attempts.
             </p>
             <div class="table-wrap" style="margin-top: 1rem;">
               <table class="students-table">
@@ -197,7 +174,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
 

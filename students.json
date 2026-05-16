@@ -1,404 +1,502 @@
 {
   "students": [
     {
-      "student_id": "STU001",
-      "password": "$2b$10$CyzPoghVjrKkm8Jkf9wvWuIeQEeH0srr/SiqbCR6MWjVEbnm.O3EK"
+      "student_id": "aaradhyau@gmail.com",
+      "password": "$2b$10$DDjNvn4f3K/i1BXLFfJq6Oirj3ZyPLmGl4OIRrqEWHlKQiwi5u0x.",
+      "grade": "Grade 10A",
+      "house": "Green"
     },
     {
-      "student_id": "STU002",
-      "password": "$2b$10$CKjslzNKPCW1mt8QhtsFOefFQP8cezy9yat2Vxq1NlSHPKRtZdEXe"
+      "student_id": "anayak@gmail.com",
+      "password": "$2b$10$9/6F5e4RLh98mMXJbCCevuXgrNEoNwMj.WffFOiPOC2xcLU6iUSWS",
+      "grade": "Grade 10A",
+      "house": "Green"
     },
     {
-      "student_id": "STU003",
-      "password": "$2b$10$erP4qYGbqORk7L7yZLFUU.Wz8oa01zD6hRtjk2VVtaY/NstJFtP06"
+      "student_id": "austinm@gmail.com",
+      "password": "$2b$10$XCZHzVESJgRGcb43iuh2/.MCmfmOScwVUnv9atcCzu.zAxWlNedWq",
+      "grade": "Grade 10A",
+      "house": "Red"
     },
     {
-      "student_id": "STU004",
-      "password": "$2b$10$GEDfIvT/rfa4TCpWjTGVcuwzMwoSXigh/0oNYwngzeDrHRtppYcei"
+      "student_id": "binamras@gmail.com",
+      "password": "$2b$10$yPI0Dv2QpaXdJMDtwuiIPOeeZqfYSoaH2dWoiZs45o/SWLzlMTwXG",
+      "grade": "Grade 10A",
+      "house": "Blue"
     },
     {
-      "student_id": "STU005",
-      "password": "$2b$10$h6e.mi7NvjwtJOQtkfAbsO3cjo2aRKPd6m2cC/LJyJxqBe754VNvO"
+      "student_id": "biplavs@gmail.com",
+      "password": "$2b$10$zWWnH2Mcm7KAYaiXTx1TpueRQC7OfbvY1GL0kiPa39I.TJwX4sqUa",
+      "grade": "Grade 10A",
+      "house": "Green"
     },
     {
-      "student_id": "STU006",
-      "password": "$2b$10$Md9cKaCWEUa8DnvbySqzLOZhWwXp8oixngnW2cLw4g3r1rihkxo1u"
+      "student_id": "deepsonm@gmail.com",
+      "password": "$2b$10$ejd8eZYnFAwCuVUzcfh1aelZbttx0si6nAlttcG185AB8yauLLGfa",
+      "grade": "Grade 10A",
+      "house": "Green"
     },
     {
-      "student_id": "STU007",
-      "password": "$2b$10$at7h2kVbpJ5HQodyKEuHcuZME5U0qTP/FBl4Ezdnnz4zX.HamQGYO"
+      "student_id": "dristan@gmail.com",
+      "password": "$2b$10$q.H/VuWLEQMIHoI8yPfaMuEqPIBh5mPrB/aTm2c2kReJu76i54ULi",
+      "grade": "Grade 10A",
+      "house": "Blue"
     },
     {
-      "student_id": "STU008",
-      "password": "$2b$10$96pXhXy0BETbaPi6Tg.ey.t6U9URyTdM1Fd/wg9.3QLVhQK13TLU2"
+      "student_id": "loverookl@gmail.com",
+      "password": "$2b$10$zg8rbocRrG0CRlTMz.To0OcZkrDDhs8SxFC.WpKqfs2QOGXCyyG8m",
+      "grade": "Grade 10A",
+      "house": "Red"
     },
     {
-      "student_id": "STU009",
-      "password": "$2b$10$mTaFfZmoo9TCKEY8jZokkeaBM7E3mv89Q2tcSBvi0jOjevQp8xK52"
+      "student_id": "manasit@gmail.com",
+      "password": "$2b$10$KTSlUCfTTcCOHMtga35DOOwp4S93xXATha0NuVrge8j7c3cyro2xO",
+      "grade": "Grade 10A",
+      "house": "Blue"
     },
     {
-      "student_id": "STU010",
-      "password": "$2b$10$c88INerRWtsNL.OhhFffROZQIOQkpwAW0OxWEs1livCVQRK8f148i"
+      "student_id": "manavis@gmail.com",
+      "password": "$2b$10$qaZNtNxREcaC816Hc8UDI.j3gYB9kvmD5uE20hyqw71A17dzezCrS",
+      "grade": "Grade 10A",
+      "house": "Yellow"
     },
     {
-      "student_id": "STU011",
-      "password": "$2b$10$LVzOg2wkGFfFgPHztPXA9.JEVzn3cBywj/VSnRzQTdRoZNyh7050i"
+      "student_id": "mimung@gmail.com",
+      "password": "$2b$10$2GRHDSj9LX9sADEAUQ.VQOoe/a/VEEgGGTHAkY6zApf0JZ/wxX2O6",
+      "grade": "Grade 10A",
+      "house": "Blue"
     },
     {
-      "student_id": "STU012",
-      "password": "$2b$10$69Lwfei.uAAQsWuxnB8gOuWXe1/wKeeyd0E/RRIfezPgRKuGfgNOK"
+      "student_id": "nivanb@gmail.com",
+      "password": "$2b$10$7Oq1nu436NNrj59waC3yDeATZs1AX34DlOFX2ypkeo.tDsRQDKKv2",
+      "grade": "Grade 10A",
+      "house": "Green"
     },
     {
-      "student_id": "STU013",
-      "password": "$2b$10$ZEVAW8guaieZKGO9bZZQb.THiKGzBHevaZbapJikWONw3FhC8whYm"
+      "student_id": "prabhatt@gmail.com",
+      "password": "$2b$10$RXy2CnrM1i9oDLEY4D484et22Oec59ApQa/.DbeYwdCerm1MPsymm",
+      "grade": "Grade 10A",
+      "house": "Red"
     },
     {
-      "student_id": "STU014",
-      "password": "$2b$10$Fnl.NVDz24hI1l170OyLQeHkIuKdYtZnZE1cuidFJrtgRKHfLa/BW"
+      "student_id": "pranavm@gmail.com",
+      "password": "$2b$10$DmFP0BtvZ87eQKsDnQRp0.tfPpF6QOzBc0MYHo6BbW89qnobHEVbW",
+      "grade": "Grade 10A",
+      "house": "Yellow"
     },
     {
-      "student_id": "STU015",
-      "password": "$2b$10$.bU.dSOPm31ylSYH/2C9feVFYPr5QKRdeMBAlK1IGFHvIkVPKtlUK"
+      "student_id": "ridamb@gmail.com",
+      "password": "$2b$10$GsicBw1ZIWCd7S44Chi3yuLcmgR9tMS/0uxhudEnRUHaasGm9v5CC",
+      "grade": "Grade 10A",
+      "house": "Red"
     },
     {
-      "student_id": "STU016",
-      "password": "$2b$10$buN19dhWQ9GXLiOXhl5vkuzVgAa8VLb/EHgzxEBJDxOdkmDJGCsKe"
+      "student_id": "rijenl@gmail.com",
+      "password": "$2b$10$NeKwNX98jET3iHjZR6sS5eT13mVKLmm5NqFFv628bELvJ/Hmiohm6",
+      "grade": "Grade 10A",
+      "house": "Yellow"
     },
     {
-      "student_id": "STU017",
-      "password": "$2b$10$L3ieFLuS3Oo4gobMbIrK9.EyYJmypxndpjyaM6qNOnYoL1dlqkLci"
+      "student_id": "rishikar@gmail.com",
+      "password": "$2b$10$VD5t09vi81a8WW4gBnaXYepeBAnlDKPovzmkPDnnC.vgxvo8UFEii",
+      "grade": "Grade 10A",
+      "house": "Yellow"
     },
     {
-      "student_id": "STU018",
-      "password": "$2b$10$drMVUQe0TpdAtF40HlnttOzbB7kiGqoQJB3rTMtKjiie/SYM7qc/y"
+      "student_id": "sabalm@gmail.com",
+      "password": "$2b$10$hHE77nCcvOlU0HlJMAD0TulNyg.EpWe4roJc221YCRuf0mTGFsmCG",
+      "grade": "Grade 10A",
+      "house": "Green"
     },
     {
-      "student_id": "STU019",
-      "password": "$2b$10$qYZTMQOPszDVt4C51lPR2.4koHeAR9C0MUZqNn7p0IOwwXRiDd5jy"
+      "student_id": "santhyagor@gmail.com",
+      "password": "$2b$10$XLkDl807ZRgqjRQqCxfXSuHiqugaQuUIt1EKJXZsGi2FkVOQLPl.y",
+      "grade": "Grade 10A",
+      "house": "Red"
     },
     {
-      "student_id": "STU020",
-      "password": "$2b$10$e.RiqFcUb61VyjQ3Dm6uVOwULOem4U51d9b5y4WMuruPoQE01eBSu"
+      "student_id": "smarans@gmail.com",
+      "password": "$2b$10$ogpXFpDy0s.5KmDSLsh91OdFTHehUdfVx2UN1iWg3EvwOas2/ZcIS",
+      "grade": "Grade 10A",
+      "house": "Yellow"
     },
     {
-      "student_id": "STU021",
-      "password": "$2b$10$6lPla6O8GTiVRvn1VtWggeiYPJ7vrhBtucgHfDf6dTgyLtnyDKmb6"
+      "student_id": "yuawanid@gmail.com",
+      "password": "$2b$10$0aDvmJPFjuZjoTkmF15EsOcip.xdicANWMAnab1P/Q6t7ZB7v7Srm",
+      "grade": "Grade 10A",
+      "house": "Red"
     },
     {
-      "student_id": "STU022",
-      "password": "$2b$10$gHJYehpD3Y31AwRuf5BRoOEHcIIieVByrv97LlokaME9SSQ1hzqu."
+      "student_id": "yubaragyeeg@gmail.com",
+      "password": "$2b$10$Ml6B8CCiJOwu3eq5DxFW1erW6LZqZjpKlQ57T2tYZdF/hRdgqsR.C",
+      "grade": "Grade 10A",
+      "house": "Blue"
     },
     {
-      "student_id": "STU023",
-      "password": "$2b$10$eiNt0a.hLZS0IdZDT9N6e.PhskNEvBo6/383EDsSabaqiaNdy4kji"
+      "student_id": "aaradhyat@gmail.com",
+      "password": "$2b$10$diLfvRydpi.Q3R9hboQRb.QKxs1MFakk5a4oPh.2wiY9C5xOic5wi",
+      "grade": "Grade 10B",
+      "house": "Yellow"
     },
     {
-      "student_id": "STU024",
-      "password": "$2b$10$aKll/fnClhRrYtb/yJ745.FYkvwtzT.x452wOY09mYL3N7wttrCKy"
+      "student_id": "aarshiyab@gmail.com",
+      "password": "$2b$10$4719fogMmGL4sou7XwwTDOuBZixB6T9gK3WpjRIqo5SX5vlG.0Gqa",
+      "grade": "Grade 10B",
+      "house": "Red"
     },
     {
-      "student_id": "STU025",
-      "password": "$2b$10$WElf7wBgojts3nXjD1pYXeECdBzaR7cUnNadzWu8Zw0VIqkJVnlGO"
+      "student_id": "aayushm@gmail.com",
+      "password": "$2b$10$cSOfWZ993sBNaTix276sN.pJYtw8wIzBSgWFOtHW2e2fWX.GUYrcS",
+      "grade": "Grade 10B",
+      "house": "Blue"
     },
     {
-      "student_id": "STU026",
-      "password": "$2b$10$BAcnlNBlpIUtzYl8FiXlfeMOBJadqLbx7zEVKqsOymUrlpG3fbIFu"
+      "student_id": "aayushg@gmail.com",
+      "password": "$2b$10$lG4pFBAi66Ssm0x89lJAtOgVZv7zKRoMqIwygxsR/W/U7CWwVXQwa",
+      "grade": "Grade 10B",
+      "house": "Blue"
     },
     {
-      "student_id": "STU027",
-      "password": "$2b$10$/HvuDnXyLs2fWchhLYJxZ.3pmEDMSteRrje74tzXez62vvoYzIjuO"
+      "student_id": "angels@gmail.com",
+      "password": "$2b$10$1MwfNWea6gABcwoTgIfaeO4gLmtTrGirj81Kikx7q7YEbprxGSTNO",
+      "grade": "Grade 10B",
+      "house": "Green"
     },
     {
-      "student_id": "STU028",
-      "password": "$2b$10$WBvA5Q4/5MoIoSld1a3vB.J27tl11ezDqilqBclF9ghNJ6A7PHeTG"
+      "student_id": "anukramn@gmail.com",
+      "password": "$2b$10$Ci.Vfvp8NqKNo0ryWWNQd..9/TmLcz2FdJXsPd1uIqS3xMriEeexO",
+      "grade": "Grade 10B",
+      "house": "Blue"
     },
     {
-      "student_id": "STU029",
-      "password": "$2b$10$ek7F0Cq0bWDO70DRMZUfoupiUaXahGWXPLa5GuPAHzH5ieB5BXhRu"
+      "student_id": "anweshs@gmail.com",
+      "password": "$2b$10$SrAQtW9RSSpaxMisApcMkeKDQDpB0lqb5p/FzOEMrjO4.6cUZeVQC",
+      "grade": "Grade 10B",
+      "house": "Red"
     },
     {
-      "student_id": "STU030",
-      "password": "$2b$10$37jt58qHNMj9oPDLW7jrzOBtoSH.EVi9Zc5T3OwF4g5b5vDNmqvYe"
+      "student_id": "dawas@gmail.com",
+      "password": "$2b$10$tjit3BG.lf0Wcl0vDx7UueDnncHIufcz3JWFPvhXpZkHqdYttGJhS",
+      "grade": "Grade 10B",
+      "house": "Blue"
     },
     {
-      "student_id": "STU031",
-      "password": "$2b$10$TDEPmL03Sid610u/QyIJJe4Ratuux7fBN74hnEppulKhmeW86FhAq"
+      "student_id": "dechens@gmail.com",
+      "password": "$2b$10$zUZvMML9/QaiIiRt19NZQepS26wdXPhLhUNNTAhu58csVL5MbeEem",
+      "grade": "Grade 10B",
+      "house": "Green"
     },
     {
-      "student_id": "STU032",
-      "password": "$2b$10$l2drSi.9yS.DB2qr1SuzD.wQ1oqQy/jjX9ps6sC6khiVkq4g6Rf8m"
+      "student_id": "hridayat@gmail.com",
+      "password": "$2b$10$eXb5gWr.r3A6dpOFHvEP2ef9oUu3GmXLNWSEveQNDb3gbs5A/uglC",
+      "grade": "Grade 10B",
+      "house": "Red"
     },
     {
-      "student_id": "STU033",
-      "password": "$2b$10$5QYjCWxkHZEcIgvsyObD3.yow7ocfdju/hZuX2qq0/aJ.fdbn/wdS"
+      "student_id": "ishikal@gmail.com",
+      "password": "$2b$10$EIRudlBFkK1NWxEMHQAeRehC6.9RD2Z521XqVuuKnZCqgO0a.Jexu",
+      "grade": "Grade 10B",
+      "house": "Red"
     },
     {
-      "student_id": "STU034",
-      "password": "$2b$10$ieImJIF9ZK3zhC7hrIXIg.8bsUGuoM5HAN7XORUdmnVJ450eH.hkO"
+      "student_id": "namgyall@gmail.com",
+      "password": "$2b$10$/KMp4wmu9PSOVEaRzBW6A.GNGy7FWawkibLHQXg7UIeOBhRVGxDv2",
+      "grade": "Grade 10B",
+      "house": "Yellow"
     },
     {
-      "student_id": "STU035",
-      "password": "$2b$10$Hqe9bE69cAE9pu2xDcg9ruRQI.gms2hk5NyW5M26LTiNTCPEHJdU2"
+      "student_id": "neelimag@gmail.com",
+      "password": "$2b$10$X1KbqUVW.f0Xt6LaWi8fyej.Wze651o8IuPYn067XvEVVtHH/nZKq",
+      "grade": "Grade 10B",
+      "house": "Yellow"
     },
     {
-      "student_id": "STU036",
-      "password": "$2b$10$6ZohEwY64ahFL7VH1mmMlefqcASXvNZa9CFMfGsPJKqZ24.qxsLsG"
+      "student_id": "nikeshk@gmail.com",
+      "password": "$2b$10$qmI3/x/knu7XV/6WooG0oeDB5EZHBRkTskPTpBSZQy96frpSH1Ht.",
+      "grade": "Grade 10B",
+      "house": "Yellow"
     },
     {
-      "student_id": "STU037",
-      "password": "$2b$10$pHlWScw6mz4PahDCpRHCyOATBTExLXgFjcMMS0clqcp/7hbCOvW1G"
+      "student_id": "nirojp@gmail.com",
+      "password": "$2b$10$KlcVp32xmOzXUbrHh8Ffs.LJBy5JkThhM1gt/41lRxTVALdIY6sYy",
+      "grade": "Grade 10B",
+      "house": "Green"
     },
     {
-      "student_id": "STU038",
-      "password": "$2b$10$F9f1L9jHFiabvdntPHOPSOsxTFTHkzAijIEtY7hHP5lfsVgb7pkdW"
+      "student_id": "niteshk@gmail.com",
+      "password": "$2b$10$aKP4LUm6F.pXB1nVy.3yju1R.ZqRhZ.aetfo/oWsnFwzkuiRIGnVe",
+      "grade": "Grade 10B",
+      "house": "Red"
     },
     {
-      "student_id": "STU039",
-      "password": "$2b$10$bJIgmv8qB.5NUJSs16jc3uGcqNtQ9JWeVh7Ylj/RVJZpxy3Hwwj.G"
+      "student_id": "raunakb@gmail.com",
+      "password": "$2b$10$frBU5zNVhdWfMpYGqEOg7uju/Ol7VwD95ONxL6yKbaB7GmEWnDcT2",
+      "grade": "Grade 10B",
+      "house": "Red"
     },
     {
-      "student_id": "STU040",
-      "password": "$2b$10$oNNEck.7nlnP1/XotJomHOaCKkaN6Rv/fbdzwX2YVAr79QgEHEuzO"
+      "student_id": "samyamg@gmail.com",
+      "password": "$2b$10$8lfxMYWu3XOEn/i0C11G/.ZPK89Z57xvI44fKqBvulh/CAhHJPjlG",
+      "grade": "Grade 10B",
+      "house": "Blue"
     },
     {
-      "student_id": "STU041",
-      "password": "$2b$10$J8gvWgkrn8vnfMrASPDdIuQpbw4YFCRAxNqIz154Zb5ztThg6rkRK"
+      "student_id": "sanskritio@gmail.com",
+      "password": "$2b$10$pVl7kXDBmRHFkg.0kln8k.aIoyDLTm9iNZpST1lmRodARLD6ifLg2",
+      "grade": "Grade 10B",
+      "house": "Blue"
     },
     {
-      "student_id": "STU042",
-      "password": "$2b$10$bCNgxvWJwYTqzyZYjYlzLOktgtRN2EitlWN6j4BJLi61E3..UIYge"
+      "student_id": "sonira@gmail.com",
+      "password": "$2b$10$bAtXzStL.KjeH/WBSRU4P.cexE1c3CzuIOZEgq5HDLjGwpf/SsWKG",
+      "grade": "Grade 10B",
+      "house": "Blue"
     },
     {
-      "student_id": "STU043",
-      "password": "$2b$10$rzLK0uZC3cAX64kErNVBreR2IwQJ.u72wYDdi90YmIjFkgUaSQOJ2"
+      "student_id": "trishas@gmail.com",
+      "password": "$2b$10$giRClmf0gRnzsVoahk.q5eVXBUEyTGkHQ40jucZjPIwBa4WBy3kwW",
+      "grade": "Grade 10B",
+      "house": "Green"
     },
     {
-      "student_id": "STU044",
-      "password": "$2b$10$r3VNaQihPlMRoLq5UL6WsO0PJRzpsDV36tywh9vx197YqwjyjBzbS"
+      "student_id": "vibhishnap@gmail.com",
+      "password": "$2b$10$S0yV6ilVU7sUhfv1PgHauueHjJFyuHF4zOCnrWEh6ZNMBYzdeGxrq",
+      "grade": "Grade 10B",
+      "house": "Red"
     },
     {
-      "student_id": "STU045",
-      "password": "$2b$10$OGQC1kF/OZNvwXi4Wc/kquH9bVKxNbKgyXNIaXP.GIY9D77fQpMBq"
+      "student_id": "yathrathat@gmail.com",
+      "password": "$2b$10$6.nm9oWfMXdSxf4jM2w/5O1AeZLiU0r9w5gOJvwvAWIYDpwLLOp5C",
+      "grade": "Grade 10B",
+      "house": "Yellow"
     },
     {
-      "student_id": "STU046",
-      "password": "$2b$10$UifRSaCplTezIRnCqNysY.iHN10FpQ1ZxmvPAOyNLj2dqJJhfyIDm"
+      "student_id": "aarososhs@gmail.com",
+      "password": "$2b$10$zgbT2WeM1kb4r/FMEFDrnuWAKX3nXk5thW2nKewmrvXu4m810TQWq",
+      "grade": "Grade 9A",
+      "house": "Green"
     },
     {
-      "student_id": "STU047",
-      "password": "$2b$10$N4o3QNSiN1atLzzRAefZcOe6tl1b8aNZGDEFfly7TPjEl6.BamOGu"
+      "student_id": "abipc@gmail.com",
+      "password": "$2b$10$yv9Kv/I6D3wclgSQcVnrEu86FHeK.L87kjDs5xPzZyzWVJFxBIYmm",
+      "grade": "Grade 9A",
+      "house": "Yellow"
     },
     {
-      "student_id": "STU048",
-      "password": "$2b$10$0LH1TO2Qjt3qpSHFrRxVUepf3kpw.MU3tN9KKRzPW6GqzFh6evPWy"
+      "student_id": "alext@gmail.com",
+      "password": "$2b$10$x2cAH.8hNzsz0ZPB1yaGROT6qGbPNJatq5RoBryNrEec76W1VwLoS",
+      "grade": "Grade 9A",
+      "house": "Red"
     },
     {
-      "student_id": "STU049",
-      "password": "$2b$10$et/wBaendeiEzLZttQMqKeDlVonXnKjd8vPKf8BTr6htQbgUDW.ly"
+      "student_id": "bibhushanb@gmail.com",
+      "password": "$2b$10$XR9GxgvUwYFxRO9p.4Q5/OId/nImrnn8kbnaVDzCNKB1eLBsnRmVu",
+      "grade": "Grade 9A",
+      "house": "Yellow"
     },
     {
-      "student_id": "STU050",
-      "password": "$2b$10$iGSoddD0/tAqt22/XyHyPOjiL3fxYluWxTb4EvrjH0ZzGGrLb6EOm"
+      "student_id": "christalr@gmail.com",
+      "password": "$2b$10$NXXSTj6FosjlaXoX7lTH4.Nm5LkZv8Lwfub4p2yC5HV7K5YjHsDqO",
+      "grade": "Grade 9A",
+      "house": "Green"
     },
     {
-      "student_id": "STU051",
-      "password": "$2b$10$gLhA2QPrlHAp3eQ5UbxkmOAA.l9uc2fuS53Y7Z/O2oMuTCwF8m5kS"
+      "student_id": "divinep@gmail.com",
+      "password": "$2b$10$399CDakX4TNIZspsmtFCKeRBWQW2ApI75zVBSgAcjZoFZG3sgGe82",
+      "grade": "Grade 9A",
+      "house": "Yellow"
     },
     {
-      "student_id": "STU052",
-      "password": "$2b$10$RsOQcKuvsWlgYoG2Z7eW4Oo0xjsMzopQ0u4EYlugEtf0MjBMaSkAW"
+      "student_id": "nirjaras@gmail.com",
+      "password": "$2b$10$NfdQUcmjpIUf.3qiPk9BSOpmVdBdyq19E2ysLyXGDQ//CG..G5YS2",
+      "grade": "Grade 9A",
+      "house": "Blue"
     },
     {
-      "student_id": "STU053",
-      "password": "$2b$10$cAoMYEEj/AD9NfVwSI1tJOI4o0CfZsV.BDIB0mvYcOOC9JK.T16/K"
+      "student_id": "phusangt@gmail.com",
+      "password": "$2b$10$tBBNhbR1gGSSxJEl2/zuNOwaVHHJga8nAzXFkDZIWZ2ZIC7VWBLVi",
+      "grade": "Grade 9A",
+      "house": "Yellow"
     },
     {
-      "student_id": "STU054",
-      "password": "$2b$10$dzKrnw3wm9WZu5aWVwBYt.ZRG6ACcQ./KHKhAlUryCho6o7pQmGUm"
+      "student_id": "pratikshyam@gmail.com",
+      "password": "$2b$10$rF2c75/uQCodZsgbkuKy6O7speqn2K8LNAzfD8iMjahcnfEwsNhNq",
+      "grade": "Grade 9A",
+      "house": "Blue"
     },
     {
-      "student_id": "STU055",
-      "password": "$2b$10$Cmm9tPPaPnwPEwYshJxk5eJ81eG7HMY.a/yd5hK2JGUD8Jrfn4heu"
+      "student_id": "prayuuktap@gmail.com",
+      "password": "$2b$10$aOxXyszMwvsO1I4rv/D1VupqNhEEO6yyAJKfp4xUHvYAGetZeHUrO",
+      "grade": "Grade 9A",
+      "house": "Blue"
     },
     {
-      "student_id": "STU056",
-      "password": "$2b$10$3Fj0z./BRmvGlisHfyDhTOSUQ7eVq8aeuBSSskKSwip2jllNivW4y"
+      "student_id": "saharshad@gmail.com",
+      "password": "$2b$10$cwITBfBIXq2fbAAUgNlBUezjquM5qvLOiILPa.sWFiddjp9vMnL6S",
+      "grade": "Grade 9A",
+      "house": "Green"
     },
     {
-      "student_id": "STU057",
-      "password": "$2b$10$s5JtIIiHZI5IKH/XT1oi8O/3SkxYAO2OgCDsZz2zny7VMgJoo8tj2"
+      "student_id": "samuelb@gmail.com",
+      "password": "$2b$10$xGN.TFAdElbB3kMxOx1RmeYCezu.h5izC3yjEAoiC9ofIcCkQGP9O",
+      "grade": "Grade 9A",
+      "house": "Red"
     },
     {
-      "student_id": "STU058",
-      "password": "$2b$10$1Ta80DCHrrdxzRE9mHgZ5epLvNYDrL3X9h96HL2iP1uIolBN9Nazy"
+      "student_id": "samyankn@gmail.com",
+      "password": "$2b$10$Kwng6ptl981fEVC.XRpt9ucyBhWQjpVYJCVXcprlj4mdbPVYq/yYC",
+      "grade": "Grade 9A",
+      "house": "Blue"
     },
     {
-      "student_id": "STU059",
-      "password": "$2b$10$KrniWlEDNDA6v.3ZHyXo9ej28M8Qr1u7xWLpAC.ki4f2REy3wt5Y."
+      "student_id": "sauryab@gmail.com",
+      "password": "$2b$10$M8lhCOJyHhoXoKfr6CMFqOHn5g2acYzaTVLjIq4PhPkEphrhmSXv6",
+      "grade": "Grade 9A",
+      "house": "Red"
     },
     {
-      "student_id": "STU060",
-      "password": "$2b$10$80y/My2o3bOOo2WbLIJOx.pwGrY3gm78gZ.aGC5JZ9pN99l3gfP96"
+      "student_id": "shrutib@gmail.com",
+      "password": "$2b$10$3.4ukaJuVca2V68by6phLuwsZX5KRGLK/0tQlDQWD9ztVxAFuciNa",
+      "grade": "Grade 9A",
+      "house": "Green"
     },
     {
-      "student_id": "STU061",
-      "password": "$2b$10$ARvvRy6Wc.6dTVTnSUSSieUkdrUvmFAl1R/qDZ2.mTlpbzOVc87Ay"
+      "student_id": "sivanshuk@gmail.com",
+      "password": "$2b$10$QT3D2oV/jdJV9mvIfUMzW.C8pyofMvydZ.7RiXJPlIklGUN8CAhga",
+      "grade": "Grade 9A",
+      "house": "Green"
     },
     {
-      "student_id": "STU062",
-      "password": "$2b$10$J1lTUx/KGYpstTsa/X6ZfOtcRBHaJFYdl4GW8d3RZLOEnAPyTyGGK"
+      "student_id": "sonishmak@gmail.com",
+      "password": "$2b$10$IuNo82KP73uqcDH6xkTh8.pb3WrV9B62.a3F.GZAuZKFFyr0Q7rQa",
+      "grade": "Grade 9A",
+      "house": "Blue"
     },
     {
-      "student_id": "STU063",
-      "password": "$2b$10$RZGUTMZRoaVgbgU9wUZq9OYCcLlMNYx.7wo7vgez8ibMGYP/LmBQS"
+      "student_id": "subhams@gmail.com",
+      "password": "$2b$10$CB3nrwPpbYgQx5pXlXJaN.b6OQ.uBzMzMOAiNTnFH7VBke8U5lAqi",
+      "grade": "Grade 9A",
+      "house": "Red"
     },
     {
-      "student_id": "STU064",
-      "password": "$2b$10$LgWKbc.8DLdXYCwtX5qVH.BT2tGx6ywPcTmu92.glsQtFJs7huSBK"
+      "student_id": "aagamanp@gmail.com",
+      "password": "$2b$10$jANVslYxxBehKtyeuK1cP./GJ3A/qW/ttN/6O15lND6nIhRUOgjtC",
+      "grade": "Grade 9B",
+      "house": "Blue"
     },
     {
-      "student_id": "STU065",
-      "password": "$2b$10$qJI7.GB045y8QRpR5RkUouniG/jhO3M/u9JMyweV1qGlOa9SzwYI."
+      "student_id": "alexam@gmail.com",
+      "password": "$2b$10$N5K/4nY3LOLmtoSR8VntBOEDvXXvMAFUQkot9wDMoYu6IVJ3DNs1K",
+      "grade": "Grade 9B",
+      "house": "Green"
     },
     {
-      "student_id": "STU066",
-      "password": "$2b$10$ulIO.jYIR4XInlsB5C5Dw.b62OvRbJkRt3Q/rdyn/7dy7sEQlxfMm"
+      "student_id": "jigyashat@gmail.com",
+      "password": "$2b$10$4W.IBuKhQK5X42ExLe37f.1yiNZGxSjDLwSaLoCdWFGVwZY89cXBO",
+      "grade": "Grade 9B",
+      "house": "Red"
     },
     {
-      "student_id": "STU067",
-      "password": "$2b$10$CjGQBId1Bb3XvuL0TmGYx.muK9J4TjUcGX3.o0ZXuZN73WNeWbV6."
+      "student_id": "jonishb@gmail.com",
+      "password": "$2b$10$zeKoMsoEIrMv5TBXFV9fteXBNW5CXrHPh8xwCBFR9gxfj0kYVPzX6",
+      "grade": "Grade 9B",
+      "house": "Yellow"
     },
     {
-      "student_id": "STU068",
-      "password": "$2b$10$TZ7ygJP5GDhqkSx2OLxHgedFcqHZEuSTkZp4kGQ4m6CJlmMNMTn7."
+      "student_id": "pranavd@gmail.com",
+      "password": "$2b$10$hzdK/1.nmN4VGmmgZz5qF.2gK4CnO0KqIXvuj6gFhcecRMNXrbDya",
+      "grade": "Grade 9B",
+      "house": "Green"
     },
     {
-      "student_id": "STU069",
-      "password": "$2b$10$Yjh5z5rV53.4T9T3IpfqXe3Wg1kdHgd9FFOfPdHOfYXdA40wStt9."
+      "student_id": "prashang@gmail.com",
+      "password": "$2b$10$7JoPM0I5vrUsaftUAZrba.8ARkZWcFzmug3oZiMVy7TtJlUbjfxyW",
+      "grade": "Grade 9B",
+      "house": "Yellow"
     },
     {
-      "student_id": "STU070",
-      "password": "$2b$10$v2g/vIUhrPtPU9fRmBA6heeC5QkWanx.UBvDQL.O0sFsKfdjgZhRW"
+      "student_id": "rashis@gmail.com",
+      "password": "$2b$10$aOPeCvIO.SnZuhGBS4Orrub9SlDgRWeK7VJO4RP1AJHD6yDBvLGk6",
+      "grade": "Grade 9B",
+      "house": "Green"
     },
     {
-      "student_id": "STU071",
-      "password": "$2b$10$ym2i0fbs.RkZt5wqZt3Zou7TbF5DYTAFHXqEir03B.Jo7ZRVINAr2"
+      "student_id": "raunakn@gmail.com",
+      "password": "$2b$10$X9/2b82I2T1rPMVTd6tc8e449qpAuc48L803NNj.0C8an0Slitose",
+      "grade": "Grade 9B",
+      "house": "Red"
     },
     {
-      "student_id": "STU072",
-      "password": "$2b$10$tdWtfFwDjjSykJMtQQGFQe9OjXnFejPiIOEBzwQ3olYqDxygzHOui"
+      "student_id": "samriddhit@gmail.com",
+      "password": "$2b$10$NrxGMd8/UQaftnNceqzU2e4D.MpW11Z89H./jaqGorc2ut4.87TDC",
+      "grade": "Grade 9B",
+      "house": "Green"
     },
     {
-      "student_id": "STU073",
-      "password": "$2b$10$zC0iDKM/CyoHnomJgBK/N.jkpGMCOafmuV.RyrYuuas7ChFjuelva"
+      "student_id": "saphalt@gmail.com",
+      "password": "$2b$10$dKCRlPvN6CVQyi243tHizuy8DoANxspO.K0vj3MHmXsHanwo42Kua",
+      "grade": "Grade 9B",
+      "house": "Green"
     },
     {
-      "student_id": "STU074",
-      "password": "$2b$10$5qhuzqTVqhOiGEeycs/6EewcgdSent0B5HQQ2NqQ3Wb/pEM5OuQIW"
+      "student_id": "sauryap@gmail.com",
+      "password": "$2b$10$SHSNwAYRygfkqeg7lEbLG.XJJ7kL31VK1061PGPY0xDAUPq.0QZ3y",
+      "grade": "Grade 9B",
+      "house": "Yellow"
     },
     {
-      "student_id": "STU075",
-      "password": "$2b$10$4f/NgFxNKTkG1Mv9sEkiiOEjastnebqyNFLr8XRGBPfy2XcDGKjxK"
+      "student_id": "sharwanid@gmail.com",
+      "password": "$2b$10$fQIY4Flx.e8ooGMlGn8VY.Vqt/jneAN7utNu6/dXDYlQcdaFknzyS",
+      "grade": "Grade 9B",
+      "house": "Red"
     },
     {
-      "student_id": "STU076",
-      "password": "$2b$10$NoPIHfgjlHkMHF82dFl6P.xmPw7rkCq2ls4Pz018gjSdp.2zDWOsG"
+      "student_id": "shuvamm@gmail.com",
+      "password": "$2b$10$3LL1AFyCOB3hPOA1fF9KtOVnnTxz6T9o.iS7y6b4gN..3FIn0Ybke",
+      "grade": "Grade 9B",
+      "house": "Green"
     },
     {
-      "student_id": "STU077",
-      "password": "$2b$10$4EL/KWt1hf9grAh6zLNN/ea./A8o8eCpkDIP.nipstDX8gig.74Ve"
+      "student_id": "sibanib@gmail.com",
+      "password": "$2b$10$DVRAlA38HHhyg1mbFjtI9OZU.kUOG1gSbKK/Pg5WNcMgd6Kz3dUde",
+      "grade": "Grade 9B",
+      "house": "Red"
     },
     {
-      "student_id": "STU078",
-      "password": "$2b$10$5L4LMwdUkwXJjA3vXGbKMua1PQ5MaDDTpsT1r8O2CWiJ41BBX4Rcu"
+      "student_id": "simsham@gmail.com",
+      "password": "$2b$10$E.f4R3lIY5PZoLTsv2SXoeaA38FoQa0jMyHR7lJNqcwpTI/V48May",
+      "grade": "Grade 9B",
+      "house": "Yellow"
     },
     {
-      "student_id": "STU079",
-      "password": "$2b$10$xZAUjAdkCzTpjgsxEkiCTOqhQKE/qO.KDBs5bvfOSY48.uxwIxJVC"
+      "student_id": "snehat@gmail.com",
+      "password": "$2b$10$PmQ.Hu87urhyuzADzDFxCedYse5BPGf4nZj43sRfRKzaq9O8x.KD6",
+      "grade": "Grade 9B",
+      "house": "Yellow"
     },
     {
-      "student_id": "STU080",
-      "password": "$2b$10$yAGjuqfo4VwCn/VoYsQb6Oub38vtzhLJK1GOfV0JNOkikGnQ1SuGq"
+      "student_id": "suraajs@gmail.com",
+      "password": "$2b$10$aAc7WYiTpxt.eZ1unbekzu9dJ2cJglwQJ0GYQp1wPKS9isqlraKrG",
+      "grade": "Grade 9B",
+      "house": "Green"
     },
     {
-      "student_id": "STU081",
-      "password": "$2b$10$7b2m2jbjuWVQ02jAH/FutO7FWaoWtMNSetRlQwVcdck2KmWgKEgdG"
+      "student_id": "swechhan@gmail.com",
+      "password": "$2b$10$1DmPaaj5AeWod1dWiXJHhuImTMg4.zQpzC0sfhNpBBUeS6/Z9lP12",
+      "grade": "Grade 9B",
+      "house": "Green"
     },
     {
-      "student_id": "STU082",
-      "password": "$2b$10$Lj1a8JCvHClgAzn6vjLXf.fDGXXqBLHQo67tuPU/S2rG4S0E0XFCe"
+      "student_id": "aaradhanar@gmail.com",
+      "password": "$2b$10$YurXWXip9evwvPJ4.9..uuTAyOUHdYMvWwDN/2PUu3wzH97V/hXCe",
+      "grade": "Grade 9B",
+      "house": "Blue"
     },
     {
-      "student_id": "STU083",
-      "password": "$2b$10$BbxL8lgJSuDctGh4cuQT5exx5sNyZVPCPhCvJHbBB5nvJ.nKH7.Na"
-    },
-    {
-      "student_id": "STU084",
-      "password": "$2b$10$mLnXPGeiYNVZMIDXYSQ7DuZnTXQ8NznsGc6VWEQwwvN5kNFuJLbbi"
-    },
-    {
-      "student_id": "STU085",
-      "password": "$2b$10$eHfx00IM9V2lrsTpw1sJVOoUWnrx1vO/Ma3ZUN6M.SjNnJuTxeTte"
-    },
-    {
-      "student_id": "STU086",
-      "password": "$2b$10$3LxyR8l//3sgi/bI8EZK0upEF1HHqlH6ZazHVo09aVNAJ5xyCOkYK"
-    },
-    {
-      "student_id": "STU087",
-      "password": "$2b$10$kbtS6OzeEpcxK8jXXvqH.O6Ohvdc9twhXzPBIhAnqbNV3/.GKSwry"
-    },
-    {
-      "student_id": "STU088",
-      "password": "$2b$10$TywK8p5TpnkedZapsMY6u.vaDrAdUAijjMyt437gEFmuq/TIFVnii"
-    },
-    {
-      "student_id": "STU089",
-      "password": "$2b$10$0/cDliMSn5xDNrivTO/tEOEg.YAaHPZq/uq2.AgyreS48GKHw89D."
-    },
-    {
-      "student_id": "STU090",
-      "password": "$2b$10$76s4a35TiHQvWBxYPiiGVODk4gyd9XdRvViGgUiSjQK.3pJMeM5n."
-    },
-    {
-      "student_id": "STU091",
-      "password": "$2b$10$MKqNgB69CwlO8tR21UREDeq5hW1q3VTTU7OBvGp8dImbc9H/UCAxS"
-    },
-    {
-      "student_id": "STU092",
-      "password": "$2b$10$wfHwsRJ2XhPwYGQ2kkW44.0pK/gswMm7uitC2HnUiDb2CdbfSnwba"
-    },
-    {
-      "student_id": "STU093",
-      "password": "$2b$10$jw59hZiA.cU1fYZBl4lnBeqQCVFiNZFJpHCSGLPfwbhpMsD/naEyK"
-    },
-    {
-      "student_id": "STU094",
-      "password": "$2b$10$EwHd9JxlebuVwSp3G6OyEePo/bFsj6mHz8ruRbKlvThHmoNU3Howa"
-    },
-    {
-      "student_id": "STU095",
-      "password": "$2b$10$dRxpbOnIwQSVcToF0/rEZu8ZZT5iurgUyLuZKLmnf4Rjy07DW009S"
-    },
-    {
-      "student_id": "STU096",
-      "password": "$2b$10$qPtVj7GMMncPLmAdreRqwelUTSEX3g2gBMWuslKUDmJf7s6DsZSMq"
-    },
-    {
-      "student_id": "STU097",
-      "password": "$2b$10$J.pNPy5mdwbuk7f6AzwRH.44.dDy4Df5Jk8LvLz/nxwFpFQM.awOC"
-    },
-    {
-      "student_id": "STU098",
-      "password": "$2b$10$luzvYHC/ySISBaFoB0FJqeI5gDRq9Y6iW3dkd.VyFxERE9lvH2d9q"
-    },
-    {
-      "student_id": "STU099",
-      "password": "$2b$10$ieRTdmmq0yPurU.O/SB8aOJjVoQc50hM8SclYZccG/yaLkiK2nEjy"
-    },
-    {
-      "student_id": "STU100",
-      "password": "$2b$10$2yvadarNAiDwOym0LHfxZeulPSFfVbgjKwk62jaWbQ5vF4zmjtGwO"
+      "student_id": "samridhhid@gmail.com",
+      "password": "$2b$10$2TGwds/P41.U08n/6NuyUeafjwhaKkr7lp5v684eoS3I/gHjF8Sru",
+      "grade": "Grade 9B",
+      "house": "Red"
     }
   ]
 }

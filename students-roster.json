@@ -1,0 +1,502 @@
+{
+  "students": [
+    {
+      "student_id": "10A001",
+      "name": "Aaradhya Uprety",
+      "grade": "Grade 10A",
+      "password": "$2b$10$H7rpHSqB6NNUNooXWy.O3ePLFJPL8xYzxjvfZWdUbreRSKSJeJow."
+    },
+    {
+      "student_id": "10A002",
+      "name": "Anaya Khatri",
+      "grade": "Grade 10A",
+      "password": "$2b$10$MYSI2BMJbsLqfhbSnWlNLeKeHg.1vNILjB3vJc4R1Ih6k4ukxfTo2"
+    },
+    {
+      "student_id": "10A003",
+      "name": "Austin Maharjan",
+      "grade": "Grade 10A",
+      "password": "$2b$10$DzYk9PngWN9AR.NuJYrZ9eyrSZvIup31BL0IC7KdsmV6Yh568NVHG"
+    },
+    {
+      "student_id": "10A004",
+      "name": "Binamra Subedi",
+      "grade": "Grade 10A",
+      "password": "$2b$10$YCVPGFs8uuOeeyP9elN6NOQ.YreT4iD5x0h0iANk6SezRyJ6vR3tW"
+    },
+    {
+      "student_id": "10A005",
+      "name": "Biplav Singh",
+      "grade": "Grade 10A",
+      "password": "$2b$10$KoXB/dYuzxBTuncR5VGJ3u9aCV78/34zE1t13Fqb.G5EAWrPpnxIC"
+    },
+    {
+      "student_id": "10A006",
+      "name": "Deepson Mainali",
+      "grade": "Grade 10A",
+      "password": "$2b$10$s3z1musRDneDwucEikrDVeutvZ5NYvpKFb7LwAQ3LGMCwr5j/FrNG"
+    },
+    {
+      "student_id": "10A007",
+      "name": "Drista Nepal",
+      "grade": "Grade 10A",
+      "password": "$2b$10$zYOzUvogK/crNkPvtGXeq.yBYR/uKZJbzC2sNGqFj8sqmub2Zfk8C"
+    },
+    {
+      "student_id": "10A008",
+      "name": "Loverook Tsering Lama",
+      "grade": "Grade 10A",
+      "password": "$2b$10$A0wrG5UkUnT.1j26U2OMUeVrg.IShuSBK30cZPnigQN7JwN//BGhW"
+    },
+    {
+      "student_id": "10A009",
+      "name": "Manasi Tamang",
+      "grade": "Grade 10A",
+      "password": "$2b$10$6TM3fD/rVcWa5wOpobTvo.eog1tKdXY6pQyme2fpGlMyHTDRtj61a"
+    },
+    {
+      "student_id": "10A010",
+      "name": "Manavi Shah",
+      "grade": "Grade 10A",
+      "password": "$2b$10$B7UPbdLUrZetrnd0UzxVLeKD16spUb8TSvOKQpT.lREbs.hbV314."
+    },
+    {
+      "student_id": "10A011",
+      "name": "Mimun Gauchan",
+      "grade": "Grade 10A",
+      "password": "$2b$10$oEIW96lFFY285ZwMDWfIhepVF5FTk5Sb2mUk2xZj4r5QRT9wpj5eq"
+    },
+    {
+      "student_id": "10A012",
+      "name": "Nivan Barayal",
+      "grade": "Grade 10A",
+      "password": "$2b$10$ScMA95Bc0SBilO5pCiV5h.QCXGtW7AJcRrRZeWJue3860IqRjRLd2"
+    },
+    {
+      "student_id": "10A013",
+      "name": "Prabhat Thapa",
+      "grade": "Grade 10A",
+      "password": "$2b$10$Wq8hKbrK2cATu5WcK44OpOjfsOCfTT4uUzGVogKULgugwN0AVvbJC"
+    },
+    {
+      "student_id": "10A014",
+      "name": "Pranav Hari Mainali",
+      "grade": "Grade 10A",
+      "password": "$2b$10$LgHElgRXmbCCtd5PQ0YB2eVv.IGa.MXgf92J09qm2YVqIkkZ3y1aG"
+    },
+    {
+      "student_id": "10A015",
+      "name": "Ridam Basnet",
+      "grade": "Grade 10A",
+      "password": "$2b$10$/Q5W1GoBvWM2jO9LW5BVLugjwH4wR6Lwe8fwdd6FARcaGez27gxx."
+    },
+    {
+      "student_id": "10A016",
+      "name": "Rijen Lama",
+      "grade": "Grade 10A",
+      "password": "$2b$10$6.Rd/Jp5gzZJGIBlsAfJX.IrBM7aVfzF6OoNisl0TEX4QqRxIThNq"
+    },
+    {
+      "student_id": "10A017",
+      "name": "Rishika Rokaha",
+      "grade": "Grade 10A",
+      "password": "$2b$10$Cj4OvfVrJIwRxMY9.jkZiODEiiIrgMJtwW.9fscvZ16zP89GLrznK"
+    },
+    {
+      "student_id": "10A018",
+      "name": "Sabal Mishra",
+      "grade": "Grade 10A",
+      "password": "$2b$10$zqHL8AzFs5BJvetObswDiOOCAwo9a1pGa6W8TPhTSkpKoEyvZr5oy"
+    },
+    {
+      "student_id": "10A019",
+      "name": "Santhyago Regmi",
+      "grade": "Grade 10A",
+      "password": "$2b$10$5u3I4nH5B.ri1pOphhQZru4vRPJ2HI.2uYezHynUFqPlsIEdqGbkm"
+    },
+    {
+      "student_id": "10A020",
+      "name": "Smaran Shrestha",
+      "grade": "Grade 10A",
+      "password": "$2b$10$G3bAk3pnZ4Rl11TMqB9gkOoACjGSWASKsD/BIyCNcLIjqmKr/412e"
+    },
+    {
+      "student_id": "10A021",
+      "name": "Yuawani Shakya Dhakhwa",
+      "grade": "Grade 10A",
+      "password": "$2b$10$6965uRQKXrV8Ibj96BLOeOU08l0iFXnkomoVQsUfKaDG0KMiJGXAi"
+    },
+    {
+      "student_id": "10A022",
+      "name": "Yubaragyee GC",
+      "grade": "Grade 10A",
+      "password": "$2b$10$TDnlmE7Ip2ywF3dFTKotZuH9NGeVMv2jNzdkOboaUAcFnLYGbCbJ."
+    },
+    {
+      "student_id": "10B001",
+      "name": "Aaradhya Thapa",
+      "grade": "Grade 10B",
+      "password": "$2b$10$RcsZhuOeLSsrnWIy8y5xyewyEObaplRGaLP.n5Aqk0sNZiksbVeYC"
+    },
+    {
+      "student_id": "10B002",
+      "name": "Aarshiya Baral",
+      "grade": "Grade 10B",
+      "password": "$2b$10$iv4N2e0M4wqnavSgJZWNsuCdxL8NXfEuKIepXAEGq.HfHry0z/XBK"
+    },
+    {
+      "student_id": "10B003",
+      "name": "Aayush Bahadur Malla",
+      "grade": "Grade 10B",
+      "password": "$2b$10$3rEdv.NK.J/dtAgr4AwkIOxGOqEN7mNzj79Gnc8Yri7JSo5TRMbUy"
+    },
+    {
+      "student_id": "10B004",
+      "name": "Aayush Gajurel",
+      "grade": "Grade 10B",
+      "password": "$2b$10$vw/zUhD0CeMppdu5zx24k.zN9Wm.Fc1v1vF3AsJ94d4o9a5mXZl9O"
+    },
+    {
+      "student_id": "10B005",
+      "name": "Angel Sharma",
+      "grade": "Grade 10B",
+      "password": "$2b$10$eUnmxwoQN4.EXaNMNj./Q.jRK5o9QevoW6YAsNGABwLH5nc3BM/xy"
+    },
+    {
+      "student_id": "10B006",
+      "name": "Anukram Nepal",
+      "grade": "Grade 10B",
+      "password": "$2b$10$bFJHRQFbuJziJvYJNdVzROnsE4ilXZ0ahvQzeWrDXkpxj8lw8X1Wi"
+    },
+    {
+      "student_id": "10B007",
+      "name": "Anwesh Shrestha",
+      "grade": "Grade 10B",
+      "password": "$2b$10$15AlUqJYIT7Elt7r8iGlzO00jMzfZUJXoHM1o/sHsCg9J1O9qMTv."
+    },
+    {
+      "student_id": "10B008",
+      "name": "Dawa Tshering Sherpa",
+      "grade": "Grade 10B",
+      "password": "$2b$10$XRL0/jCEhHrX3GfxgJV6sO7zN932TW3LRZ.uzGo.F.Ih35aM.W8c6"
+    },
+    {
+      "student_id": "10B009",
+      "name": "Dechen Sherpa",
+      "grade": "Grade 10B",
+      "password": "$2b$10$dCOL5UCP2Yj4Ta01QjmDSupYhtbN84johpTp.i5tYYIs2biNzuEsS"
+    },
+    {
+      "student_id": "10B010",
+      "name": "Hridaya Keshar Thapa",
+      "grade": "Grade 10B",
+      "password": "$2b$10$qZ38ES1HrtmzoygZ2A5O6uekfmLQtW1uGaZJFy97QaQDnrFx.rPJe"
+    },
+    {
+      "student_id": "10B011",
+      "name": "Ishika Lamsal",
+      "grade": "Grade 10B",
+      "password": "$2b$10$3VhIK2OQCBG1QuKAz6pFbOo72m0Lusxe3wXAX/J4QWsMbDqb8/2gK"
+    },
+    {
+      "student_id": "10B012",
+      "name": "Namgyal Singe Lama",
+      "grade": "Grade 10B",
+      "password": "$2b$10$N2MAK3QsS99Pzdx8PNoLQe.TyIBdhlE1lTt.UGTqXbyxFJvXtvzL."
+    },
+    {
+      "student_id": "10B013",
+      "name": "Neelima Giri",
+      "grade": "Grade 10B",
+      "password": "$2b$10$kiSvG9AOF/0JVXSv1IpvqeH0xHY78AlAWEHsWZTY7tockaT4bFngi"
+    },
+    {
+      "student_id": "10B014",
+      "name": "Nikesh Karki",
+      "grade": "Grade 10B",
+      "password": "$2b$10$zLnljoxehDUQSR56o6amse4aHEe3bqT3KTFrksrOmGS/Z61/JMTo2"
+    },
+    {
+      "student_id": "10B015",
+      "name": "Niroj Babu Pradhan",
+      "grade": "Grade 10B",
+      "password": "$2b$10$I21O6nKZBC/CLbuBRFhZ4ORRovOYgdm6uYfuaqGE0hIBHi4lPghNK"
+    },
+    {
+      "student_id": "10B016",
+      "name": "Nitesh Karki",
+      "grade": "Grade 10B",
+      "password": "$2b$10$pcPfwVE9rFhd0qUr24F9vuQelBZPUmHIHFj1qP8iip47puiDMdipS"
+    },
+    {
+      "student_id": "10B017",
+      "name": "Raunak Budhathoki",
+      "grade": "Grade 10B",
+      "password": "$2b$10$AQmiE5zm7bVsreGhC0wPRu/lOXfn7sIJZMePfluA061V8mwTri8QG"
+    },
+    {
+      "student_id": "10B018",
+      "name": "Samyam Ghimire",
+      "grade": "Grade 10B",
+      "password": "$2b$10$8oym0874LL1q3/MXv5j4.u.ddY0C7RcdU3MZQXEBFvG8YddolkR1q"
+    },
+    {
+      "student_id": "10B019",
+      "name": "Sanskriti Ojha",
+      "grade": "Grade 10B",
+      "password": "$2b$10$wp9R2O5HHjBNs00NlJUC7efCwGIhzt6Z7rtauCoboWTAy3BLTpzFi"
+    },
+    {
+      "student_id": "10B020",
+      "name": "Sonir Acharya",
+      "grade": "Grade 10B",
+      "password": "$2b$10$MjU9Tz2XJo0FQKFINDL7HOadXXFbBf5OF3YIXZQ0uCFeuXcdLpvti"
+    },
+    {
+      "student_id": "10B021",
+      "name": "Trisha Shrestha",
+      "grade": "Grade 10B",
+      "password": "$2b$10$NwHaZ7t0FQ67GxUER4ddceMvnnkZSBZIIjdPpQGQigJOnWLSRbFM6"
+    },
+    {
+      "student_id": "10B022",
+      "name": "Vibhishna Poudyal",
+      "grade": "Grade 10B",
+      "password": "$2b$10$GeQYO8Sk6.7QPzvbzGGxHe5TlUoeCDhd9KsbB5gqqSohGz0JZuWWy"
+    },
+    {
+      "student_id": "10B023",
+      "name": "Yathratha Thapa",
+      "grade": "Grade 10B",
+      "password": "$2b$10$8y90r.M6X7FPXexz2P8Xber2LkpWGmDQNxy./EAVslFdP8.S3MYH."
+    },
+    {
+      "student_id": "9A001",
+      "name": "Aarososh Shrestha",
+      "grade": "Grade 9A",
+      "password": "$2b$10$BnLucbCaHZPmX/C5RIXvYOmpIR8u37zHk7ok7FHM4zZYfJJpb34Y2"
+    },
+    {
+      "student_id": "9A002",
+      "name": "Abip Raj Chalise",
+      "grade": "Grade 9A",
+      "password": "$2b$10$jegKGtNYtYj8ZZWl1I1jc.qR9jAfc0n4KNjeM7xJ1mXIkHkRmXd36"
+    },
+    {
+      "student_id": "9A003",
+      "name": "Alex Tripathi",
+      "grade": "Grade 9A",
+      "password": "$2b$10$xrNd1g9Jwrb3KltAcJy4Uef4jGD78Gyz4H1Ifc.L6DWxASKHRll0G"
+    },
+    {
+      "student_id": "9A004",
+      "name": "Bibhushan Bhusal",
+      "grade": "Grade 9A",
+      "password": "$2b$10$kzp0cC8s.kAbaDJYYswxP.Ofp6a30fdI96gdI5Xv7Wo2si4rqUUeu"
+    },
+    {
+      "student_id": "9A005",
+      "name": "Christal Risal",
+      "grade": "Grade 9A",
+      "password": "$2b$10$P5SrdjpXlHthIWvAn3.96.eEDt3tYmSVR5JFas2wy4niBeF24.K.a"
+    },
+    {
+      "student_id": "9A006",
+      "name": "Divine Pokharel",
+      "grade": "Grade 9A",
+      "password": "$2b$10$opPqQShyp0p3ePYBQP5RMOJ70l894Fr92nxsOh0yBMmM0hJ9RmnrG"
+    },
+    {
+      "student_id": "9A007",
+      "name": "Nirjara Shah",
+      "grade": "Grade 9A",
+      "password": "$2b$10$DjCEa3OmhYMRQiS4Y801S.Px1fLNTKmSbl8.cw4YCaByUzk7mvdfO"
+    },
+    {
+      "student_id": "9A008",
+      "name": "Phusang Tamang",
+      "grade": "Grade 9A",
+      "password": "$2b$10$STp1zi/z4N.aa1EAXaOjzOJDHPYVgaA3e.qPYZygOuX4iAgz4E2N."
+    },
+    {
+      "student_id": "9A009",
+      "name": "Pratikshya Magar",
+      "grade": "Grade 9A",
+      "password": "$2b$10$iy9.RDBdVlGZmejgTltESOxNapIbbsPReCGEWqE8afCnEPiQf2tUC"
+    },
+    {
+      "student_id": "9A010",
+      "name": "Prayuukta Paudel",
+      "grade": "Grade 9A",
+      "password": "$2b$10$e.7H7l1wAVvOsiBdGItZtOZOBe6XVrm3CnPrwOMWzmFm2hHUDJbh2"
+    },
+    {
+      "student_id": "9A011",
+      "name": "Saharsha Dhakal",
+      "grade": "Grade 9A",
+      "password": "$2b$10$LrleY/mg4e875NvWVv83Ze7xgUXfJMvQFXNZPfwnayUgkpWhw7Hcm"
+    },
+    {
+      "student_id": "9A012",
+      "name": "Samuel Budhathoki",
+      "grade": "Grade 9A",
+      "password": "$2b$10$SXT1hE/2sxPCbTv0juxZl.L1K3jjsJZPLPjBvPaLKkZJqxPLI60jO"
+    },
+    {
+      "student_id": "9A013",
+      "name": "Samyank Nepal",
+      "grade": "Grade 9A",
+      "password": "$2b$10$JEmieX/vQwGRoFTIbbJbTe4Tsu8Qap1UkkgKn8sfJuN.JFlB5sK/q"
+    },
+    {
+      "student_id": "9A014",
+      "name": "Saurya Bajracharya",
+      "grade": "Grade 9A",
+      "password": "$2b$10$.Fs7Hi9ybrdmOGbiMqfuR.nz.ei/ctDsUQVPM5uWhX7DLGAiqpWwy"
+    },
+    {
+      "student_id": "9A015",
+      "name": "Shruti Bhattarai",
+      "grade": "Grade 9A",
+      "password": "$2b$10$/xwBfZcJkfCVNs0taXMvg.hjYTLvqMklnWSkK8K96/tbpIrjLY4yC"
+    },
+    {
+      "student_id": "9A016",
+      "name": "Sivanshu Kuikel",
+      "grade": "Grade 9A",
+      "password": "$2b$10$Mp78Q.rwsrJCtLbWcOM9LO0.2yBuAZ75xmQZ3oMFg91qqZVZ5L96C"
+    },
+    {
+      "student_id": "9A017",
+      "name": "Sonishma Khatri",
+      "grade": "Grade 9A",
+      "password": "$2b$10$QC.kkfcbUTadUkWIIeN0g.tVCRoQB2iV9/Dk1yECs9TAih/lekqSW"
+    },
+    {
+      "student_id": "9A018",
+      "name": "Subham Shrestha",
+      "grade": "Grade 9A",
+      "password": "$2b$10$zu2VBmf9zLuck3TT61067ezKmdfKOI.mTSHdBVHIA7I47gHhUnkvy"
+    },
+    {
+      "student_id": "9B001",
+      "name": "Aagaman Pudasaini",
+      "grade": "Grade 9B",
+      "password": "$2b$10$iufBHSDzbKhDVP1JO9MU2eEsg9PUCsIutaao4hqLA4ndqX0j2rYHW"
+    },
+    {
+      "student_id": "9B002",
+      "name": "Alexa Magar",
+      "grade": "Grade 9B",
+      "password": "$2b$10$HiHefQ3Y2M5yNpyPA8cjS.4Ls4K9hu/ixxSiO0ctOpnced1ZXrg3q"
+    },
+    {
+      "student_id": "9B003",
+      "name": "Jigyasha Thapa",
+      "grade": "Grade 9B",
+      "password": "$2b$10$lEE.PHpaBNq8XhtyuE20G.CkoP0.Vw4QzoZ3P3X4lLKsj.fuCNE8i"
+    },
+    {
+      "student_id": "9B004",
+      "name": "Jonish Bhatta",
+      "grade": "Grade 9B",
+      "password": "$2b$10$w32EL3dmwAxANgYyo.nmBOfyjcvvxqR/bJteYcywDXMnR/4lK9Ybi"
+    },
+    {
+      "student_id": "9B005",
+      "name": "Pranav Dhital",
+      "grade": "Grade 9B",
+      "password": "$2b$10$8O7sO7bVSMbfN7qjXUA61u7w/iyPIaxUuVt6F.uxj/X0U0dVhHXzC"
+    },
+    {
+      "student_id": "9B006",
+      "name": "Prashan Giri",
+      "grade": "Grade 9B",
+      "password": "$2b$10$MHbCzz6LwMYieXgta2GCy.KlT5oj.Vk8.Ho2vFlx.nGEawWl8bDcq"
+    },
+    {
+      "student_id": "9B007",
+      "name": "Rashi Shrestha",
+      "grade": "Grade 9B",
+      "password": "$2b$10$Gv/rwnsy.woFSnOeoh3qDeD7rXDXVpikqBoA7YAQk.GSeGOYH4OUi"
+    },
+    {
+      "student_id": "9B008",
+      "name": "Raunak Nepal",
+      "grade": "Grade 9B",
+      "password": "$2b$10$zR.ght/qPQyT36asOYGM3OBUfdNe6TofrMbmI.r1v2hu5iN38FzfW"
+    },
+    {
+      "student_id": "9B009",
+      "name": "Samriddhi Thapa",
+      "grade": "Grade 9B",
+      "password": "$2b$10$Y7QSbcCOFFbM3Hn6bx0p5OG6yiEJ7eNOqiP3KW9VHhaI3vc.If6Qm"
+    },
+    {
+      "student_id": "9B010",
+      "name": "Saphal Tamang",
+      "grade": "Grade 9B",
+      "password": "$2b$10$CYl6uKd4da262gxFWZ5UoOZsTZXJWiD3X9JjUQj.Y8BIpTcCvL15e"
+    },
+    {
+      "student_id": "9B011",
+      "name": "Saurya Panta",
+      "grade": "Grade 9B",
+      "password": "$2b$10$wyf8WL6XID6.O/yxoBpbKehRgBfxT6JCzP/w61PISLpQYc/uXqbSG"
+    },
+    {
+      "student_id": "9B012",
+      "name": "Sharwani Dahal",
+      "grade": "Grade 9B",
+      "password": "$2b$10$2/RSPyWqFDn7IWrfnQEmq.AR5z408B6o9CgVXCL0nvWm1I01f4Cme"
+    },
+    {
+      "student_id": "9B013",
+      "name": "Shuvam Maskey",
+      "grade": "Grade 9B",
+      "password": "$2b$10$87Z3odOCKpvxGiKu5qp3HukSQH7SXnFBA96e2kC3tF945xuLfjpN6"
+    },
+    {
+      "student_id": "9B014",
+      "name": "Sibani Basnet",
+      "grade": "Grade 9B",
+      "password": "$2b$10$9VUJfzP6LiAKWgCXUkxZoeEEVcUsOarMnCAURbTyNqls9bR0x7WC6"
+    },
+    {
+      "student_id": "9B015",
+      "name": "Simsha Magar",
+      "grade": "Grade 9B",
+      "password": "$2b$10$IBrvDjdOY5Ifu5LJ2pSdAuK6/m99gqWMA461uzOmByWgAsm1TZLUa"
+    },
+    {
+      "student_id": "9B016",
+      "name": "Sneha Thapa",
+      "grade": "Grade 9B",
+      "password": "$2b$10$s68BeNKFaEwQhYPz9.ma3.rPZoNSbO/rJGnn0D.eUGRskM13gpzcq"
+    },
+    {
+      "student_id": "9B017",
+      "name": "Suraaj Ratna Shrestha",
+      "grade": "Grade 9B",
+      "password": "$2b$10$7ZhBpz/zjeeu9LVHXoj1Ue0YYgax9kN4Rs1ZElzA5bTiOeFSFL9xK"
+    },
+    {
+      "student_id": "9B018",
+      "name": "Swechha Neupane",
+      "grade": "Grade 9B",
+      "password": "$2b$10$rZZ.ZSKI6cQJcbeJecJUyuDIpDVxcLqpHXRpw3Ysap0sIUjoTqfJ."
+    },
+    {
+      "student_id": "9B019",
+      "name": "Aaradhana Roka",
+      "grade": "Grade 9B",
+      "password": "$2b$10$tEI2UmjNFgKRodN7K8qMAuIX2VAy2E4.7jLsY7a/yLFdPu8/K/ROi"
+    },
+    {
+      "student_id": "9B020",
+      "name": "Samridhhi Dangal",
+      "grade": "Grade 9B",
+      "password": "$2b$10$eMRp/1U/eNeCyxlV.VwXkuXp8fF8MYo3MouiFM4zVXOMkOupuxmVq"
+    }
+  ]
+}

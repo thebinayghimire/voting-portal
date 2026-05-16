@@ -3,26 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login – Elite Grand School Voting</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Login - Elite Grand School Voting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/theme.css" />
 </head>
-<body>
+<body class="auth-page">
+  <div class="login-card auth-card">
+    <div class="login-logo-wrap">
+      <img src="photos/elitelogo.jpg" alt="Elite Grand School" class="login-logo" />
+      <span class="login-school-name">Elite Grand School</span>
+      <span class="login-portal-tag">Student Voting Portal</span>
+    </div>
 
-  <header>
-    <h1>Elite Grand School</h1>
-    <p class="subtitle">Student Voting Portal</p>
-  </header>
+    <div class="login-divider"></div>
 
-  <main class="center-card">
-    <h2>Student Login</h2>
-    <p>Enter your assigned Student ID and password to access the voting page.</p>
+    <p class="login-heading">Student Login</p>
+    <p class="login-hint">Enter your credentials to access the ballot.</p>
 
-    <div id="status-banner" class="info-msg hidden"></div>
-    <div id="error-msg" class="error-msg hidden"></div>
+    <div id="status-banner" class="msg info hidden"></div>
+    <div id="error-msg" class="msg error hidden"></div>
 
     <div class="form-group">
-      <label for="student-id">Student ID</label>
-      <input type="text" id="student-id" placeholder="e.g. STU001" autocomplete="off" />
+      <label for="student-id">Email</label>
+      <input type="email" id="student-id" placeholder="e.g. student@example.com" autocomplete="off" />
     </div>
 
     <div class="form-group">
@@ -30,14 +38,10 @@
       <input type="password" id="password" placeholder="Enter your password" />
     </div>
 
-    <button id="login-btn" class="btn">Login</button>
+    <button id="login-btn">Login</button>
 
-    <p class="small-text">Forgot your credentials? Contact your class teacher.</p>
-  </main>
-
-  <footer>
-    <p>Elite Grand School &copy; 2025. All rights reserved.</p>
-  </footer>
+    <p class="login-footer-note">Forgot your credentials? Contact your class teacher.</p>
+  </div>
 
   <script src="js/login.js"></script>
 </body>

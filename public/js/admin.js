@@ -1,15 +1,35 @@
-// admin.js — admin dashboard. Cookie sessions, no localStorage.
+// admin.js - admin dashboard. Cookie sessions, no localStorage.
 // Builds tables/rows via DOM (no innerHTML interpolation of user data).
 
 const $ = (id) => document.getElementById(id);
 
-const GRADES = ['Grade 1','Grade 2','Grade 3','Grade 4','Grade 5','Grade 6','Grade 7','Grade 8','Grade 9','Grade 10'];
+const GRADES = ['Grade 9A', 'Grade 9B', 'Grade 10A', 'Grade 10B', 'Teacher'];
+
+const POSITION_ORDER = [
+  'Head Boy',
+  'Head Girl',
+  'Deputy Head Boy',
+  'Deputy Head Girl',
+  'Prefect Boy',
+  'Prefect Girl',
+  'Sports Captain',
+  'Sports Vice Captain',
+  'Blue House Captain',
+  'Blue House Vice Captain',
+  'Green House Captain',
+  'Green House Vice Captain',
+  'Red House Captain',
+  'Red House Vice Captain',
+  'Yellow House Captain',
+  'Yellow House Vice Captain',
+];
 
 let allData       = null;
 let currentFilter = 'all';
 let currentTab    = 'results';
+let resultsAccessCode = null;
 
-/* ── Auth UI ─────────────────────────────────────────────────────── */
+/* Auth UI */
 
 function showDashboard() {
   $('login-screen').classList.add('hidden');
@@ -66,7 +86,7 @@ async function adminLogout() {
   showLogin();
 }
 
-/* ── Tabs ────────────────────────────────────────────────────────── */
+/* Tabs */
 
 function switchTab(name) {
   currentTab = name;
@@ -84,17 +104,26 @@ function refreshCurrentTab() {
   if (currentTab === 'audit')   loadAudit();
 }
 
-/* ── Results tab ─────────────────────────────────────────────────── */
+/* Results tab */
 
 async function loadResults() {
-  $('last-updated').textContent = 'Loading…';
+  $('last-updated').textContent = 'Loading...';
   $('results-locked').classList.add('hidden');
 
   try {
-    const res = await fetch('/admin/results', { credentials: 'include' });
+    const headers = {};
+    if (resultsAccessCode) headers['x-results-code'] = resultsAccessCode;
+    const res = await fetch('/admin/results', { credentials: 'include', headers });
     if (res.status === 401) { showLogin(); return; }
     if (res.status === 403) {
       const data = await res.json().catch(() => ({}));
+      if (data.requires_results_code) {
+        const code = window.prompt('Enter the second-person results code.');
+        if (code) {
+          resultsAccessCode = code;
+          return loadResults();
+        }
+      }
       $('results-locked').classList.remove('hidden');
       $('results-locked').textContent = data.message || 'Results locked until voting closes.';
       $('last-updated').textContent = 'Results not yet available.';
@@ -105,7 +134,7 @@ async function loadResults() {
     $('last-updated').textContent = 'Last updated: ' + new Date().toLocaleTimeString();
     if (allData.election) {
       $('election-status').textContent =
-        `Election ${allData.election.status} (${allData.election.opens_at} → ${allData.election.closes_at})`;
+        `Election ${allData.election.status} (${allData.election.opens_at} to ${allData.election.closes_at})`;
     }
   } catch {
     $('last-updated').textContent = 'Failed to load. Try refreshing.';
@@ -114,22 +143,26 @@ async function loadResults() {
 
 function renderAll() {
   if (!allData) return;
-  const { totalVotes, totalStudents, gradeStats } = allData;
+  const totalVoters = allData.totalVoters ?? allData.totalVotes ?? 0;
+  const { totalStudents, gradeStats } = allData;
+  const numPositions = allData.numPositions ?? 2;
+  const ballotsCast = allData.ballotsCast ?? totalVoters * numPositions;
 
-  $('stat-votes').textContent     = totalVotes;
+  $('stat-votes').textContent     = totalVoters;
   $('stat-students').textContent  = totalStudents;
-  $('stat-turnout').textContent   = totalStudents ? Math.round((totalVotes / totalStudents) * 100) + '%' : '0%';
-  $('stat-remaining').textContent = totalStudents - totalVotes;
+  $('stat-turnout').textContent   = totalStudents ? Math.round((totalVoters / totalStudents) * 100) + '%' : '0%';
+  $('stat-ballots').textContent   = ballotsCast;
+  $('stat-ballots-note').textContent = `${numPositions} per voter`;
+  $('stat-remaining').textContent = totalStudents - totalVoters;
 
   const gradeMap = {};
   (gradeStats || []).forEach(g => { gradeMap[g.grade] = g.voted; });
 
   const chips = $('grade-chips');
-  const selected = $('grade-select').value;
   chips.replaceChildren();
   for (const g of GRADES) {
     const chip = document.createElement('div');
-    chip.className = 'grade-chip' + (selected === g ? ' active' : '');
+    chip.className = 'grade-chip';
     const name = document.createElement('div');
     name.className = 'chip-name';
     name.textContent = g;
@@ -138,48 +171,56 @@ function renderAll() {
     stat.textContent = `${gradeMap[g] || 0} voted`;
     chip.appendChild(name);
     chip.appendChild(stat);
-    chip.addEventListener('click', () => {
-      $('grade-select').value = g;
-      onGradeChange();
-    });
     chips.appendChild(chip);
   }
-
-  renderGradeView();
-  renderStudentsTable();
-}
-
-function onGradeChange() {
-  const grade = $('grade-select').value;
-  document.querySelectorAll('.grade-chip').forEach(chip => {
-    const name = chip.querySelector('.chip-name')?.textContent;
-    chip.classList.toggle('active', name === grade);
-  });
-  renderGradeView();
-}
-
-function renderGradeView() {
-  if (!allData) return;
-  const grade = $('grade-select').value;
-  const { results, gradeStats, totalVotes, totalStudents } = allData;
-
-  const filtered = grade === 'all' ? results : results.filter(r => r.grade === grade);
-  renderBars($('house-results'),  filtered.filter(r => r.category === 'House'));
-  renderBars($('school-results'), filtered.filter(r => r.category === 'School'));
 
   const turnoutEl = $('turnout-text');
   turnoutEl.replaceChildren();
   const strong = document.createElement('strong');
-  if (grade === 'all') {
-    strong.textContent = totalVotes;
-    turnoutEl.appendChild(strong);
-    turnoutEl.appendChild(document.createTextNode(` of ${totalStudents} students voted`));
-  } else {
-    const gs = (gradeStats || []).find(g => g.grade === grade);
-    strong.textContent = gs ? gs.voted : 0;
-    turnoutEl.appendChild(strong);
-    turnoutEl.appendChild(document.createTextNode(` students in ${grade} voted`));
+  strong.textContent = totalVoters;
+  turnoutEl.appendChild(strong);
+  turnoutEl.appendChild(document.createTextNode(` of ${totalStudents} students voted`));
+
+  renderResultPanels();
+  renderStudentsTable();
+}
+
+function renderResultPanels() {
+  if (!allData) return;
+  const { results } = allData;
+  const grid = $('results-grid');
+  grid.replaceChildren();
+
+  const byCategory = new Map();
+  for (const r of results) {
+    if (!byCategory.has(r.category)) byCategory.set(r.category, []);
+    byCategory.get(r.category).push(r);
   }
+
+  const orderedPositions = POSITION_ORDER.filter(p => byCategory.has(p));
+  const extras = [...byCategory.keys()].filter(k => !POSITION_ORDER.includes(k));
+  const allPositions = [...orderedPositions, ...extras];
+
+  allPositions.forEach((pos, idx) => {
+    const panel = document.createElement('div');
+    panel.className = 'result-panel';
+
+    const label = document.createElement('div');
+    label.className = 'panel-label';
+    label.textContent = `Position ${idx + 1}`;
+
+    const title = document.createElement('div');
+    title.className = 'panel-title';
+    title.textContent = pos;
+
+    const barsContainer = document.createElement('div');
+    renderBars(barsContainer, byCategory.get(pos) || []);
+
+    panel.appendChild(label);
+    panel.appendChild(title);
+    panel.appendChild(barsContainer);
+    grid.appendChild(panel);
+  });
 }
 
 function renderBars(container, candidates) {
@@ -244,7 +285,7 @@ function renderStudentsTable() {
   if (!students.length) {
     const tr = document.createElement('tr');
     const td = document.createElement('td');
-    td.colSpan = 2;
+    td.colSpan = 3;
     td.textContent = 'No students found.';
     td.style.textAlign = 'center';
     td.style.color = '#bbb';
@@ -257,12 +298,15 @@ function renderStudentsTable() {
     const tr = document.createElement('tr');
     const tdId = document.createElement('td');
     tdId.textContent = s.student_id;
+    const tdGrade = document.createElement('td');
+    tdGrade.textContent = s.grade || '';
     const tdStatus = document.createElement('td');
     const pill = document.createElement('span');
     pill.className = s.has_voted ? 'pill-yes' : 'pill-no';
     pill.textContent = s.has_voted ? 'Voted' : 'Pending';
     tdStatus.appendChild(pill);
     tr.appendChild(tdId);
+    tr.appendChild(tdGrade);
     tr.appendChild(tdStatus);
     tbody.appendChild(tr);
   }
@@ -275,7 +319,7 @@ function filterStudents(filter, btn) {
   renderStudentsTable();
 }
 
-/* ── Turnout tab ─────────────────────────────────────────────────── */
+/* Turnout tab */
 
 async function loadTurnout() {
   try {
@@ -308,7 +352,7 @@ async function loadTurnout() {
   }
 }
 
-/* ── Audit tab ───────────────────────────────────────────────────── */
+/* Audit tab */
 
 async function loadAudit() {
   try {
@@ -334,8 +378,8 @@ async function loadAudit() {
       const cells = [
         new Date(e.timestamp).toLocaleString(),
         e.event_type,
-        e.actor || '–',
-        e.ip || '–',
+        e.actor || '-',
+        e.ip || '-',
         e.details || '',
       ];
       for (const v of cells) {
@@ -356,10 +400,10 @@ async function loadAudit() {
   }
 }
 
-/* ── Init ────────────────────────────────────────────────────────── */
+/* Init */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Try to load — if 401, we'll fall back to login screen.
+  // Try to load - if 401, we'll fall back to login screen.
   fetch('/admin/turnout', { credentials: 'include' })
     .then(r => {
       if (r.ok) {
@@ -374,7 +418,6 @@ document.addEventListener('DOMContentLoaded', () => {
   $('admin-login-btn').addEventListener('click', adminLogin);
   $('logout-btn').addEventListener('click', adminLogout);
   $('refresh-btn').addEventListener('click', refreshCurrentTab);
-  $('grade-select').addEventListener('change', onGradeChange);
 
   document.querySelectorAll('.tab-btn').forEach(b => {
     b.addEventListener('click', () => switchTab(b.dataset.tab));
