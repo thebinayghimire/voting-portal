@@ -56,16 +56,67 @@
             <p class="dash-sub" id="last-updated">Loading...</p>
             <p class="dash-sub" id="election-status"></p>
           </div>
-          <button class="refresh-btn" id="refresh-btn">Refresh</button>
+          <div class="dash-top-actions">
+            <button class="refresh-btn" id="refresh-btn">Refresh</button>
+            <button class="start-election-btn hidden" id="start-election-btn">
+              <span class="start-icon">▶</span> Start Election
+            </button>
+            <button class="end-election-btn hidden" id="end-election-btn">
+              <span class="end-icon">⏹</span> End Election
+            </button>
+            <div class="election-ended-chip hidden" id="election-ended-chip">
+              <span class="ended-dot"></span> Election Ended
+            </div>
+          </div>
         </div>
 
         <div class="tab-bar">
-          <button class="tab-btn active" data-tab="results">Results</button>
-          <button class="tab-btn" data-tab="turnout">Live Turnout</button>
+          <button class="tab-btn active" data-tab="live">
+            <span class="tab-live-dot"></span>Live
+          </button>
+          <button class="tab-btn" data-tab="results">Results</button>
+          <button class="tab-btn" data-tab="turnout">Turnout</button>
           <button class="tab-btn" data-tab="audit">Audit Log</button>
         </div>
 
-        <div class="tab-pane" id="tab-results">
+        <div class="tab-pane" id="tab-live">
+          <div class="live-header">
+            <div class="live-badge">
+              <span class="live-dot"></span>
+              <span>LIVE RESULTS</span>
+            </div>
+            <div class="live-meta" id="live-meta-text">Connecting…</div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-label">Voted</div>
+              <div class="stat-value" id="lv-voted">-</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Total Voters</div>
+              <div class="stat-value" id="lv-total">-</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Turnout</div>
+              <div class="stat-value" id="lv-pct">-</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Yet to Vote</div>
+              <div class="stat-value" id="lv-remaining">-</div>
+            </div>
+          </div>
+
+          <div class="section-card">
+            <div class="panel-label">Participation</div>
+            <div class="panel-title">By Section</div>
+            <div class="grade-chips" id="lv-grade-chips"></div>
+          </div>
+
+          <div class="results-grid" id="lv-results-grid"></div>
+        </div>
+
+        <div class="tab-pane hidden" id="tab-results">
           <div class="results-locked-banner hidden" id="results-locked">
             Results are locked until voting closes.
           </div>
@@ -179,6 +230,17 @@
 
     <footer>Elite Grand School &copy; 2025. All rights reserved.</footer>
 
-    <script src="js/admin.js"></script>
+    <!-- Printable final results overlay -->
+    <div id="print-overlay" class="print-overlay hidden">
+      <div class="print-toolbar no-print">
+        <button class="print-action-btn" id="do-print-btn">🖨 Print Results</button>
+        <button class="print-close-btn" id="close-print-btn">✕ Close</button>
+      </div>
+      <div class="print-document" id="print-document">
+        <!-- filled by JS -->
+      </div>
+    </div>
+
+    <script src="js/admin.js?v=2"></script>
   </body>
 </html>

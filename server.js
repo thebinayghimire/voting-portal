@@ -24,15 +24,15 @@ const helmet = require('helmet');
 const app = express();
 
 const VALID_GRADES = [
-  'Grade 9A',
-  'Grade 9B',
-  'Grade 10A',
-  'Grade 10B',
+  'Grade 9 CT',
+  'Grade 9 CE',
+  'Grade 10 DT 1',
+  'Grade 10 DT 2',
   'Teacher',
   'All Grades',
 ];
 
-const VALID_HOUSES = ['Blue', 'Green', 'Red', 'Yellow'];
+const VALID_HOUSES = ['Blue', 'Green', 'Red', 'Yellow', 'All'];
 
 const HOUSE_CATEGORIES = {
   Blue:   ['Blue House Captain',   'Blue House Vice Captain'],
@@ -44,6 +44,7 @@ const HOUSE_CATEGORIES = {
 const ALL_HOUSE_CATS = new Set(Object.values(HOUSE_CATEGORIES).flat());
 
 function getCandidatesForHouse(candidates, house) {
+  if (house === 'All') return candidates;
   if (!house) return candidates.filter((c) => !ALL_HOUSE_CATS.has(c.category));
   const allowed = new Set(HOUSE_CATEGORIES[house] || []);
   return candidates.filter((c) => !ALL_HOUSE_CATS.has(c.category) || allowed.has(c.category));
@@ -53,7 +54,8 @@ function getRequiredCategoriesForHouse(allCategories, house) {
   const result = new Set();
   for (const cat of allCategories) {
     if (ALL_HOUSE_CATS.has(cat)) {
-      if (house && (HOUSE_CATEGORIES[house] || []).includes(cat)) result.add(cat);
+      if (house === 'All') result.add(cat);
+      else if (house && (HOUSE_CATEGORIES[house] || []).includes(cat)) result.add(cat);
     } else {
       result.add(cat);
     }
@@ -248,6 +250,11 @@ db.exec(`
     details    TEXT
   );
 
+  CREATE TABLE IF NOT EXISTS settings (
+    key   TEXT PRIMARY KEY,
+    value TEXT NOT NULL
+  );
+
   CREATE INDEX IF NOT EXISTS idx_votes_candidate ON votes(candidate_id);
   CREATE INDEX IF NOT EXISTS idx_votes_grade     ON votes(grade);
   CREATE INDEX IF NOT EXISTS idx_audit_time      ON audit_log(timestamp);
@@ -366,9 +373,23 @@ const voteLimiter = rateLimit({
 /* Election helpers                                                            */
 /* -------------------------------------------------------------------------- */
 
+function isForceEnded() {
+  try {
+    return db.prepare("SELECT 1 FROM settings WHERE key = 'force_ended'").get() != null;
+  } catch { return false; }
+}
+
+function isForceStarted() {
+  try {
+    return db.prepare("SELECT 1 FROM settings WHERE key = 'force_started'").get() != null;
+  } catch { return false; }
+}
+
 function electionStatus() {
+  if (isForceEnded())  return 'closed';
+  if (isForceStarted()) return 'open';
   const now = Date.now();
-  if (now < electionOpenMs) return 'pre_open';
+  if (now < electionOpenMs)  return 'pre_open';
   if (now >= electionCloseMs) return 'closed';
   return 'open';
 }
@@ -691,8 +712,69 @@ app.post('/admin/login', adminLoginLimiter, async (req, res) => {
   });
 });
 
+app.get('/admin/election-state', requireAdmin, (req, res) => {
+  const endedRow   = db.prepare("SELECT value FROM settings WHERE key = 'force_ended'").get();
+  const startedRow = db.prepare("SELECT value FROM settings WHERE key = 'force_started'").get();
+  res.json({
+    status:        electionStatus(),
+    force_started: startedRow != null,
+    force_ended:   endedRow   != null,
+    started_at:    startedRow ? startedRow.value : null,
+    ended_at:      endedRow   ? endedRow.value   : null,
+    opens_at:      ELECTION_OPEN,
+    closes_at:     ELECTION_CLOSE,
+  });
+});
+
+app.post('/admin/start-election', requireAdmin, (req, res) => {
+  if (isForceEnded()) {
+    return res.status(409).json({ message: 'Election already ended. Cannot restart.' });
+  }
+  const existing = db.prepare("SELECT value FROM settings WHERE key = 'force_started'").get();
+  if (existing) {
+    return res.status(409).json({ message: 'Election already started.', started_at: existing.value });
+  }
+  const startedAt = new Date().toISOString();
+  db.prepare("INSERT OR REPLACE INTO settings (key, value) VALUES ('force_started', ?)").run(startedAt);
+  audit('election_force_started', 'admin', req.ip, { started_at: startedAt });
+  res.json({ started_at: startedAt, status: 'open' });
+});
+
+app.post('/admin/end-election', requireAdmin, (req, res) => {
+  const existing = db.prepare("SELECT value FROM settings WHERE key = 'force_ended'").get();
+  if (existing) {
+    return res.status(409).json({ message: 'Election already ended.', ended_at: existing.value });
+  }
+
+  const endedAt = new Date().toISOString();
+  db.prepare("INSERT OR REPLACE INTO settings (key, value) VALUES ('force_ended', ?)").run(endedAt);
+  audit('election_force_ended', 'admin', req.ip, { ended_at: endedAt });
+
+  const candidates = loadCandidates();
+  const students   = loadStudents();
+  const countStmt  = db.prepare('SELECT COUNT(*) AS cnt FROM votes WHERE candidate_id = ?');
+  const results    = candidates.map((c) => ({
+    candidate_id: c.candidate_id,
+    name: c.name,
+    category: c.category,
+    grade: c.grade,
+    votes: countStmt.get(c.candidate_id).cnt,
+  }));
+  const gradeStats = db.prepare('SELECT grade, COUNT(*) AS voted FROM voters GROUP BY grade').all();
+  const total      = db.prepare('SELECT COUNT(*) AS cnt FROM voters').get().cnt;
+
+  res.json({
+    ended_at: endedAt,
+    totalVoters: total,
+    totalStudents: students.length,
+    results,
+    gradeStats,
+    election: { opens_at: ELECTION_OPEN, closes_at: endedAt, status: 'closed' },
+  });
+});
+
 app.get('/admin/results', requireAdmin, requireResultsCode, (req, res) => {
-  if (Date.now() < resultsAfterMs) {
+  if (Date.now() < resultsAfterMs && !isForceEnded()) {
     audit('admin_results_blocked', 'admin', req.ip, { now: new Date().toISOString() });
     return res.status(403).json({
       message: 'Results are not yet available. Wait until election close.',
@@ -740,6 +822,42 @@ app.get('/admin/results', requireAdmin, requireResultsCode, (req, res) => {
     students: studentStatus,
     election: { opens_at: ELECTION_OPEN, closes_at: ELECTION_CLOSE, status: electionStatus() },
   });
+});
+
+app.get('/admin/live', requireAdmin, (req, res) => {
+  try {
+  const candidates = loadCandidates();
+  const students = loadStudents();
+
+  const countStmt = db.prepare('SELECT COUNT(*) AS cnt FROM votes WHERE candidate_id = ?');
+  const results = candidates.map((c) => ({
+    candidate_id: c.candidate_id,
+    name: c.name,
+    category: c.category,
+    grade: c.grade,
+    votes: countStmt.get(c.candidate_id).cnt,
+  }));
+
+  const gradeStats = db.prepare(
+    'SELECT grade, COUNT(*) AS voted FROM voters GROUP BY grade'
+  ).all();
+
+  const total = db.prepare('SELECT COUNT(*) AS cnt FROM voters').get().cnt;
+  const ballotCount = db.prepare('SELECT COUNT(*) AS cnt FROM votes').get().cnt;
+
+  res.json({
+    totalVoters: total,
+    ballotsCast: ballotCount,
+    numPositions: loadCategories().size,
+    totalStudents: students.length,
+    results,
+    gradeStats,
+    election: { opens_at: ELECTION_OPEN, closes_at: ELECTION_CLOSE, status: electionStatus() },
+  });
+  } catch (err) {
+    console.error('[/admin/live] ERROR:', err);
+    res.status(500).json({ message: err.message });
+  }
 });
 
 app.get('/admin/turnout', requireAdmin, (req, res) => {
