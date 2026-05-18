@@ -59,7 +59,7 @@ async function handleLogin() {
     const data = await res.json().catch(() => ({}));
 
     if (res.ok) {
-      window.location.href = 'vote.html';
+      window.location.replace('vote.html');
       return;
     }
     showError(data.message || 'Invalid credentials. Please try again.');

@@ -17,6 +17,7 @@ This is still not a replacement for real election operations. The biggest practi
 - Persistent sessions using a small `better-sqlite3` session store.
 - Runtime data outside the repo through `DATA_DIR`.
 - Local SQLite backups after each vote and on a 5-minute interval.
+- Append-only hash-chained vote ledger in `backups/vote-ledger.jsonl`.
 - Optional Backblaze B2 cloud uploads for every local backup.
 - Credential rotation tool that generates fresh passwords and printable slips.
 - CLI roster editor for adding, updating, and removing students.
@@ -53,6 +54,8 @@ Runtime files are created under `DATA_DIR` when set, otherwise in the project di
 votes.db
 sessions/sessions.db
 backups/votes-*.db
+backups/vote-ledger.jsonl
+backups/vote-ledger.sha256
 ```
 
 For deployment, set `DATA_DIR` to a persistent disk path such as `/var/data`.
@@ -85,6 +88,7 @@ RESULTS_VISIBLE_AFTER=2026-05-15T15:00:00+05:45
 RESULTS_ACCESS_CODE_HASH=bcrypt_hash_for_second_person_code
 ADMIN_ALLOWED_IPS=203.0.113.10
 BACKUP_RETAIN=100
+VOTE_LEDGER_SALT=separate_random_secret_for_ledger_hashes
 ```
 
 Optional Backblaze B2 cloud backup:
@@ -97,6 +101,42 @@ B2_PREFIX=voting-portal-backups
 ```
 
 When those B2 values are set, each local `votes.db` backup is also uploaded to Backblaze B2.
+
+## Append-Only Vote Ledger
+
+Every successful vote is also appended to:
+
+```text
+backups/vote-ledger.jsonl
+```
+
+Each line contains one vote event with:
+
+- sequence number
+- timestamp
+- anonymized `voter_hash`
+- grade and house
+- selected candidate IDs
+- `previous_hash`
+- `entry_hash`
+
+The `entry_hash` is calculated from the current entry and the previous entry hash. If someone edits, deletes, or reorders a line, verification fails.
+
+Admin access:
+
+```text
+Admin Dashboard -> Ledger tab -> Verify Ledger
+Admin Dashboard -> Ledger tab -> Download Ledger
+```
+
+Direct admin endpoints after logging in:
+
+```text
+GET /admin/ledger/verify
+GET /admin/ledger/download
+```
+
+For privacy, the ledger does not store readable `student_id` values. It stores a salted SHA-256 `voter_hash`. Set `VOTE_LEDGER_SALT` in `.env` before the real election for a separate ledger salt.
 
 ## Student Roster
 

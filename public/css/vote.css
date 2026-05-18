@@ -33,6 +33,10 @@ header .badge {
   border: 1px solid rgba(255, 255, 255, 0.22);
 }
 
+.vote-brand-lockup {
+  cursor: default;
+}
+
 .page-wrap {
   max-width: var(--content-max);
   margin: 0 auto;

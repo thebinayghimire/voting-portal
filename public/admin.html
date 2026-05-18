@@ -77,6 +77,7 @@
           <button class="tab-btn" data-tab="results">Results</button>
           <button class="tab-btn" data-tab="turnout">Turnout</button>
           <button class="tab-btn" data-tab="audit">Audit Log</button>
+          <button class="tab-btn" data-tab="ledger">Ledger</button>
         </div>
 
         <div class="tab-pane" id="tab-live">
@@ -222,6 +223,31 @@
                 </thead>
                 <tbody id="audit-body"></tbody>
               </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane hidden" id="tab-ledger">
+          <div class="section-card">
+            <div class="students-header">
+              <div>
+                <div class="panel-label">Tamper Evidence</div>
+                <div class="panel-title">Append-Only Vote Ledger</div>
+                <p class="dash-sub">
+                  Verifies the hash chain written alongside votes.db after each successful vote.
+                </p>
+              </div>
+              <div class="filter-row">
+                <button class="filter-btn" id="verify-ledger-btn">Verify Ledger</button>
+                <button class="filter-btn" id="download-ledger-btn">Download Ledger</button>
+              </div>
+            </div>
+            <div class="ledger-status-card" id="ledger-status-card">
+              <div class="ledger-status-title" id="ledger-status-title">Not checked yet</div>
+              <div class="ledger-status-meta" id="ledger-status-meta">
+                Click Verify Ledger to check the chain.
+              </div>
+              <pre class="ledger-errors hidden" id="ledger-errors"></pre>
             </div>
           </div>
         </div>

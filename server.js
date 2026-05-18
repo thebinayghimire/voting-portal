@@ -71,6 +71,7 @@ const PORT = process.env.PORT || 3000;
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const IS_PROD = NODE_ENV === 'production';
 const SESSION_SECRET = process.env.SESSION_SECRET;
+const VOTE_LEDGER_SALT = process.env.VOTE_LEDGER_SALT || SESSION_SECRET;
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
 const ADMIN_PWHASH = process.env.ADMIN_PASSWORD_HASH;
 const ELECTION_OPEN = process.env.ELECTION_OPEN_AT;
@@ -136,6 +137,8 @@ function isBcryptHash(value) {
 const DB_PATH = path.join(DATA_DIR, 'votes.db');
 const SESSIONS_DIR = path.join(DATA_DIR, 'sessions');
 const BACKUPS_DIR = path.join(DATA_DIR, 'backups');
+const VOTE_LEDGER_PATH = path.join(BACKUPS_DIR, 'vote-ledger.jsonl');
+const VOTE_LEDGER_CHECKSUM_PATH = path.join(BACKUPS_DIR, 'vote-ledger.sha256');
 fs.mkdirSync(DATA_DIR, { recursive: true });
 fs.mkdirSync(SESSIONS_DIR, { recursive: true });
 fs.mkdirSync(BACKUPS_DIR, { recursive: true });
@@ -410,6 +413,159 @@ function ballotTimestamp() {
 }
 
 /* -------------------------------------------------------------------------- */
+/* Append-only vote ledger                                                     */
+/* -------------------------------------------------------------------------- */
+
+const LEDGER_GENESIS_HASH = 'GENESIS';
+
+function sha256Hex(value) {
+  return crypto.createHash('sha256').update(value).digest('hex');
+}
+
+function stableStringify(value) {
+  if (Array.isArray(value)) {
+    return `[${value.map(stableStringify).join(',')}]`;
+  }
+  if (value && typeof value === 'object') {
+    return `{${Object.keys(value).sort().map((key) => (
+      `${JSON.stringify(key)}:${stableStringify(value[key])}`
+    )).join(',')}}`;
+  }
+  return JSON.stringify(value);
+}
+
+function normalizeVoteSelections(votes) {
+  return Object.keys(votes).sort().map((category) => ({
+    category,
+    candidate_id: votes[category],
+  }));
+}
+
+function voterLedgerHash(studentId) {
+  return sha256Hex(`${VOTE_LEDGER_SALT}|${studentId}`);
+}
+
+function readLedgerEntries() {
+  if (!fs.existsSync(VOTE_LEDGER_PATH)) return [];
+  const raw = fs.readFileSync(VOTE_LEDGER_PATH, 'utf8').trim();
+  if (!raw) return [];
+  return raw.split(/\r?\n/).map((line, index) => {
+    try {
+      return JSON.parse(line);
+    } catch (err) {
+      const e = new Error(`Ledger line ${index + 1} is not valid JSON`);
+      e.line = index + 1;
+      throw e;
+    }
+  });
+}
+
+function lastLedgerHash() {
+  const entries = readLedgerEntries();
+  if (!entries.length) return LEDGER_GENESIS_HASH;
+  return entries[entries.length - 1].entry_hash || LEDGER_GENESIS_HASH;
+}
+
+function ledgerChecksum() {
+  if (!fs.existsSync(VOTE_LEDGER_PATH)) return null;
+  return sha256Hex(fs.readFileSync(VOTE_LEDGER_PATH));
+}
+
+function writeLedgerChecksum() {
+  const checksum = ledgerChecksum();
+  if (!checksum) return null;
+  fs.writeFileSync(VOTE_LEDGER_CHECKSUM_PATH, `${checksum}  vote-ledger.jsonl\n`, { encoding: 'utf8' });
+  return checksum;
+}
+
+function buildLedgerPayload({ studentId, grade, house, votes, timestamp, sequence, previousHash }) {
+  return {
+    version: 1,
+    sequence,
+    timestamp,
+    event: 'vote_cast',
+    voter_hash: voterLedgerHash(studentId),
+    grade,
+    house: house || null,
+    selections: normalizeVoteSelections(votes),
+    previous_hash: previousHash,
+  };
+}
+
+function hashLedgerPayload(payload) {
+  return sha256Hex(stableStringify(payload));
+}
+
+function appendVoteLedger({ studentId, grade, house, votes }) {
+  const entries = readLedgerEntries();
+  const previousHash = entries.length ? entries[entries.length - 1].entry_hash : LEDGER_GENESIS_HASH;
+  const payload = buildLedgerPayload({
+    studentId,
+    grade,
+    house,
+    votes,
+    timestamp: new Date().toISOString(),
+    sequence: entries.length + 1,
+    previousHash,
+  });
+  const entry = { ...payload, entry_hash: hashLedgerPayload(payload) };
+  fs.appendFileSync(VOTE_LEDGER_PATH, `${JSON.stringify(entry)}\n`, { encoding: 'utf8', flag: 'a' });
+  writeLedgerChecksum();
+  return entry;
+}
+
+function verifyVoteLedger() {
+  const result = {
+    ok: true,
+    exists: fs.existsSync(VOTE_LEDGER_PATH),
+    entries: 0,
+    last_hash: null,
+    checksum: null,
+    errors: [],
+  };
+
+  let entries;
+  try {
+    entries = readLedgerEntries();
+  } catch (err) {
+    result.ok = false;
+    result.errors.push(err.message);
+    return result;
+  }
+
+  result.entries = entries.length;
+  let previousHash = LEDGER_GENESIS_HASH;
+  const seenHashes = new Set();
+
+  entries.forEach((entry, index) => {
+    const line = index + 1;
+    const { entry_hash: entryHash, ...payload } = entry;
+    const expectedSequence = index + 1;
+    const expectedHash = hashLedgerPayload(payload);
+
+    if (entry.sequence !== expectedSequence) {
+      result.errors.push(`Line ${line}: expected sequence ${expectedSequence}, found ${entry.sequence}`);
+    }
+    if (entry.previous_hash !== previousHash) {
+      result.errors.push(`Line ${line}: previous_hash does not match previous entry`);
+    }
+    if (entryHash !== expectedHash) {
+      result.errors.push(`Line ${line}: entry_hash does not match entry contents`);
+    }
+    if (seenHashes.has(entryHash)) {
+      result.errors.push(`Line ${line}: duplicate entry_hash`);
+    }
+    seenHashes.add(entryHash);
+    previousHash = entryHash;
+  });
+
+  result.ok = result.errors.length === 0;
+  result.last_hash = entries.length ? entries[entries.length - 1].entry_hash : LEDGER_GENESIS_HASH;
+  result.checksum = ledgerChecksum();
+  return result;
+}
+
+/* -------------------------------------------------------------------------- */
 /* Static files and data                                                       */
 /* -------------------------------------------------------------------------- */
 
@@ -647,6 +803,7 @@ app.post('/vote', requireStudent, requireElectionOpen, voteLimiter, (req, res) =
     for (const [cat, candidateId] of Object.entries(votes)) {
       insertVote.run(candidateId, cat, grade, anonymousBallotTime);
     }
+    appendVoteLedger({ studentId, grade, house, votes });
   });
 
   try {
@@ -878,6 +1035,28 @@ app.get('/admin/audit', requireAdmin, (req, res) => {
     'SELECT id, timestamp, event_type, actor, ip, details FROM audit_log ORDER BY id DESC LIMIT ?'
   ).all(limit);
   res.json({ events });
+});
+
+app.get('/admin/ledger/verify', requireAdmin, (req, res) => {
+  const verification = verifyVoteLedger();
+  audit('admin_ledger_verify', 'admin', req.ip, {
+    ok: verification.ok,
+    entries: verification.entries,
+    checksum: verification.checksum,
+  });
+  res.json({
+    ...verification,
+    file: path.relative(DATA_DIR, VOTE_LEDGER_PATH),
+    checksum_file: path.relative(DATA_DIR, VOTE_LEDGER_CHECKSUM_PATH),
+  });
+});
+
+app.get('/admin/ledger/download', requireAdmin, (req, res) => {
+  if (!fs.existsSync(VOTE_LEDGER_PATH)) {
+    return res.status(404).json({ message: 'Vote ledger has not been created yet.' });
+  }
+  audit('admin_ledger_download', 'admin', req.ip);
+  res.download(VOTE_LEDGER_PATH, 'vote-ledger.jsonl');
 });
 
 app.post('/admin/logout', (req, res) => {

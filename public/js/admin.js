@@ -111,6 +111,7 @@ function refreshCurrentTab() {
   if (currentTab === 'results') loadResults();
   if (currentTab === 'turnout') loadTurnout();
   if (currentTab === 'audit')   loadAudit();
+  if (currentTab === 'ledger')  loadLedger();
 }
 
 /* Live tab */
@@ -557,6 +558,52 @@ async function loadAudit() {
   }
 }
 
+/* Ledger tab */
+
+async function loadLedger() {
+  try {
+    const res = await fetch('/admin/ledger/verify', { credentials: 'include' });
+    if (res.status === 401) { showLogin(); return; }
+    const data = await res.json();
+    renderLedgerStatus(data);
+    $('last-updated').textContent = 'Ledger verified: ' + new Date().toLocaleTimeString();
+  } catch {
+    renderLedgerStatus({
+      ok: false,
+      entries: 0,
+      errors: ['Could not verify ledger. Check server connection.'],
+    });
+  }
+}
+
+function renderLedgerStatus(data) {
+  const card = $('ledger-status-card');
+  const title = $('ledger-status-title');
+  const meta = $('ledger-status-meta');
+  const errors = $('ledger-errors');
+
+  card.classList.toggle('ok', Boolean(data.ok));
+  card.classList.toggle('bad', !data.ok);
+  title.textContent = data.ok ? 'Ledger verified' : 'Ledger needs attention';
+  meta.textContent = [
+    `Entries: ${data.entries ?? 0}`,
+    `Checksum: ${data.checksum || 'not created yet'}`,
+    `Last hash: ${data.last_hash || 'none'}`,
+  ].join('\n');
+
+  if (data.errors && data.errors.length) {
+    errors.textContent = data.errors.join('\n');
+    errors.classList.remove('hidden');
+  } else {
+    errors.textContent = '';
+    errors.classList.add('hidden');
+  }
+}
+
+function downloadLedger() {
+  window.location.href = '/admin/ledger/download';
+}
+
 /* End Election */
 
 async function checkElectionState() {
@@ -862,6 +909,8 @@ document.addEventListener('DOMContentLoaded', () => {
   $('refresh-btn').addEventListener('click', refreshCurrentTab);
   $('start-election-btn').addEventListener('click', startElection);
   $('end-election-btn').addEventListener('click', endElection);
+  $('verify-ledger-btn').addEventListener('click', loadLedger);
+  $('download-ledger-btn').addEventListener('click', downloadLedger);
   $('do-print-btn').addEventListener('click', () => window.print());
   $('close-print-btn').addEventListener('click', closePrintOverlay);
 

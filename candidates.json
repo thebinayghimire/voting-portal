@@ -2,11 +2,10 @@
   "candidates": [
     { "candidate_id": "headboy-001", "name": "Aayush Gajurel",         "category": "Head Boy",              "grade": "All Grades", "symbol": "Spiderman" },
     { "candidate_id": "headboy-002", "name": "Aayush Malla",           "category": "Head Boy",              "grade": "All Grades", "symbol": "Chess King" },
-    { "candidate_id": "headboy-003", "name": "Binamra Subedi",         "category": "Head Boy",              "grade": "All Grades", "symbol": "Trisul" },
     { "candidate_id": "headboy-004", "name": "Loverook Tshering Lama", "category": "Head Boy",              "grade": "All Grades", "symbol": "Pen" },
     { "candidate_id": "headboy-005", "name": "Raunak Budathoki",       "category": "Head Boy",              "grade": "All Grades", "symbol": "Luffy" },
     { "candidate_id": "headboy-006", "name": "Sonir Acharya",          "category": "Head Boy",              "grade": "All Grades", "symbol": "Liverbird" },
-    { "candidate_id": "headboy-007", "name": "Hridaya Keshar Boy",     "category": "Head Boy",              "grade": "All Grades", "symbol": "Mr Beast Logo" },
+    { "candidate_id": "headboy-007", "name": "Hridaya Keshar Thapa",   "category": "Head Boy",              "grade": "All Grades", "symbol": "Mr Beast Logo" },
 
     { "candidate_id": "headgirl-001", "name": "Anaya Khatri",          "category": "Head Girl",             "grade": "All Grades", "symbol": "Pikachu" },
     { "candidate_id": "headgirl-002", "name": "Rishika Rokaha",        "category": "Head Girl",             "grade": "All Grades", "symbol": "Shinchan" },
@@ -22,7 +21,7 @@
     { "candidate_id": "depheadgirl-002", "name": "Nirjara Shah",          "category": "Deputy Head Girl",   "grade": "All Grades", "symbol": "Crown" },
 
     { "candidate_id": "prefectboy-001", "name": "Samyam Basnet",         "category": "Prefect Boy",         "grade": "All Grades", "symbol": "Skibidi Toilet" },
-    { "candidate_id": "prefectboy-002", "name": "Aadarsha Khadka",       "category": "Prefect Boy",         "grade": "All Grades", "symbol": "Ronaldo and Messi" },
+    { "candidate_id": "prefectboy-002", "name": "Aadarsha Khadka",       "category": "Prefect Boy",         "grade": "All Grades", "symbol": "Book" },
     { "candidate_id": "prefectboy-003", "name": "Utkarsha Raj Pandey",   "category": "Prefect Boy",         "grade": "All Grades", "symbol": "Titan Cameraman" },
 
     { "candidate_id": "prefectgirl-001", "name": "Krisha Aryal",         "category": "Prefect Girl",        "grade": "All Grades", "symbol": "Katseye Logo" },
@@ -44,11 +43,11 @@
     { "candidate_id": "sportsvc-001",  "name": "Awani Subedi",           "category": "Sports Vice Captain", "grade": "All Grades", "symbol": "Captain America Shield" },
     { "candidate_id": "sportsvc-002",  "name": "Ashreya Shrestha",       "category": "Sports Vice Captain", "grade": "All Grades", "symbol": "Nepal National Football Team" },
     { "candidate_id": "sportsvc-003",  "name": "Sumin Ramtel",           "category": "Sports Vice Captain", "grade": "All Grades", "symbol": "Dragon" },
-    { "candidate_id": "sportsvc-004",  "name": "Samrat Nagarkoti",       "category": "Sports Vice Captain", "grade": "All Grades", "symbol": "Pushpa" },
+    { "candidate_id": "sportsvc-004",  "name": "Samrat Nagarkoti",       "category": "Sports Vice Captain", "grade": "All Grades", "symbol": "FC Barcelona" },
     { "candidate_id": "sportsvc-005",  "name": "Aaryaman Thapa",         "category": "Sports Vice Captain", "grade": "All Grades", "symbol": "Triple T" },
     { "candidate_id": "sportsvc-006",  "name": "Usuma Bhandari",         "category": "Sports Vice Captain", "grade": "All Grades", "symbol": "Nike" },
     { "candidate_id": "sportsvc-007",  "name": "Nirvika Tamang",         "category": "Sports Vice Captain", "grade": "All Grades", "symbol": "Glasses" },
-    { "candidate_id": "sportsvc-008",  "name": "Sambhav Aryal",          "category": "Sports Vice Captain", "grade": "All Grades", "symbol": "" },
+    { "candidate_id": "sportsvc-008",  "name": "Sambhav Aryal",          "category": "Sports Vice Captain", "grade": "All Grades", "symbol": "Government of Nepal" },
     { "candidate_id": "sportsvc-009",  "name": "Divine Pokhrel",         "category": "Sports Vice Captain", "grade": "All Grades", "symbol": "Phone" },
     { "candidate_id": "sportsvc-010",  "name": "Shubham Shrestha",       "category": "Sports Vice Captain", "grade": "All Grades", "symbol": "Amongus" },
     { "candidate_id": "sportsvc-011",  "name": "Aarusha Shrestha",       "category": "Sports Vice Captain", "grade": "All Grades", "symbol": "Libra" },
@@ -61,8 +60,11 @@
     { "candidate_id": "sportsvc-018",  "name": "Aavash Baral",           "category": "Sports Vice Captain", "grade": "All Grades", "symbol": "YouTube" },
 
     { "candidate_id": "bluehousecapt-001", "name": "Divyansh KC",          "category": "Blue House Captain",      "grade": "All Grades", "symbol": "OM" },
+    { "candidate_id": "bluehousecapt-002", "name": "Prinsha Katwal",       "category": "Blue House Captain",      "grade": "All Grades", "symbol": "Good Luck Leaf Clover" },
 
     { "candidate_id": "bluehousevc-001",   "name": "Anubhav Adhikari",     "category": "Blue House Vice Captain",  "grade": "All Grades", "symbol": "Khukuri" },
+    { "candidate_id": "bluehousevc-002",   "name": "Nirvaan Khadgi",       "category": "Blue House Vice Captain",  "grade": "All Grades", "symbol": "Prithvi Narayan Shah" },
+    { "candidate_id": "bluehousevc-003",   "name": "Evan Ghimire",         "category": "Blue House Vice Captain",  "grade": "All Grades", "symbol": "American Nightmare" },
 
     { "candidate_id": "greenhousecapt-001", "name": "Lhamu Sherpa",        "category": "Green House Captain",     "grade": "All Grades", "symbol": "Star" },
     { "candidate_id": "greenhousecapt-002", "name": "Ezyan Shrestha",      "category": "Green House Captain",     "grade": "All Grades", "symbol": "Nepal Map" },
@@ -71,8 +73,11 @@
     { "candidate_id": "greenhousevc-002",  "name": "Nishma R.L Shah",      "category": "Green House Vice Captain", "grade": "All Grades", "symbol": "Basketball Hoop" },
 
     { "candidate_id": "redhousecapt-001",  "name": "Hridhaan Raj Chaudhary", "category": "Red House Captain",    "grade": "All Grades", "symbol": "Illuminati" },
+    { "candidate_id": "redhousecapt-002",  "name": "Sajan B.C",             "category": "Red House Captain",    "grade": "All Grades", "symbol": "Ninja Hattori" },
+    { "candidate_id": "redhousecapt-003",  "name": "Aakriti Thapa",         "category": "Red House Captain",    "grade": "All Grades", "symbol": "Hello Kitty" },
 
     { "candidate_id": "redhousevc-001",    "name": "Udayashri Pathak",     "category": "Red House Vice Captain",  "grade": "All Grades", "symbol": "Mountain" },
+    { "candidate_id": "redhousevc-002",    "name": "Anbeshak Rawal",       "category": "Red House Vice Captain",  "grade": "All Grades", "symbol": "Naruto" },
 
     { "candidate_id": "yellowhousecapt-001", "name": "Adhvika Poudel",     "category": "Yellow House Captain",    "grade": "All Grades", "symbol": "Ghanti" },
     { "candidate_id": "yellowhousecapt-002", "name": "Aarnav Kharel",      "category": "Yellow House Captain",    "grade": "All Grades", "symbol": "Tiger" },

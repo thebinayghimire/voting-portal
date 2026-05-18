@@ -354,6 +354,50 @@ header {
   background: var(--clr-danger-bg);
 }
 
+.ledger-status-card {
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+}
+
+.ledger-status-card.ok {
+  border-color: var(--clr-success-border);
+  background: var(--clr-success-bg);
+}
+
+.ledger-status-card.bad {
+  border-color: var(--clr-danger-border);
+  background: var(--clr-danger-bg);
+}
+
+.ledger-status-title {
+  color: var(--clr-text);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.ledger-status-meta {
+  margin-top: 0.45rem;
+  color: var(--clr-text-muted);
+  font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: var(--text-xs);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.ledger-errors {
+  margin-top: 0.8rem;
+  padding: 0.8rem;
+  color: var(--clr-danger);
+  background: #ffffff;
+  border: 1px solid var(--clr-danger-border);
+  border-radius: var(--radius-md);
+  font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: var(--text-xs);
+  white-space: pre-wrap;
+}
+
 .results-locked-banner {
   margin-bottom: 1rem;
 }

@@ -26,6 +26,8 @@ let allCandidates      = [];
 let requiredCategories = [];
 let selectedVotes      = {};
 let assignedGrade      = null;
+let ballotSubmitted    = false;
+let internalNavigation = false;
 
 function showError(msg) {
   const el = $('error-msg');
@@ -54,6 +56,28 @@ function detectHouse(category) {
   return null;
 }
 
+function goToLogin() {
+  internalNavigation = true;
+  window.location.replace('login.html');
+}
+
+function setupVotePageGuard() {
+  history.replaceState({ voteLock: true }, '', window.location.href);
+  history.pushState({ voteLock: true }, '', window.location.href);
+
+  window.addEventListener('popstate', () => {
+    if (ballotSubmitted || internalNavigation) return;
+    history.pushState({ voteLock: true }, '', window.location.href);
+    showWindowBanner('You are already inside the ballot. Please complete and submit your vote.');
+  });
+
+  window.addEventListener('beforeunload', (event) => {
+    if (ballotSubmitted || internalNavigation) return;
+    event.preventDefault();
+    event.returnValue = '';
+  });
+}
+
 async function init() {
   try {
     const statusRes = await fetch('/election/status');
@@ -70,7 +94,7 @@ async function init() {
   try {
     const res = await fetch('/candidates', { credentials: 'include' });
     if (res.status === 401 || res.status === 403) {
-      window.location.href = 'login.html';
+      goToLogin();
       return;
     }
     const data = await res.json();
@@ -310,13 +334,14 @@ async function submitVote() {
     });
     const data = await res.json().catch(() => ({}));
     if (res.ok) {
+      ballotSubmitted = true;
       $('vote-main').classList.add('hidden');
       $('ballot-footer').classList.add('hidden');
       $('success-screen').classList.remove('hidden');
       return;
     }
     if (res.status === 401) {
-      window.location.href = 'login.html';
+      goToLogin();
       return;
     }
     showError(data.message || 'Something went wrong. Please try again.');
@@ -347,10 +372,11 @@ async function logoutAfterVote() {
     // Redirect anyway so the shared device returns to the login screen.
   }
 
-  window.location.href = 'login.html';
+  goToLogin();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  setupVotePageGuard();
   init();
   $('submit-btn').addEventListener('click', submitVote);
   const logoutBtn = $('logout-after-vote-btn');
