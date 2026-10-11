@@ -33,18 +33,17 @@ async function startServer(extraEnv = {}) {
 
   writeJson(studentsFile, {
     students: [
-      { student_id: 'STU001', password: bcrypt.hashSync('pass001', 10), grade: 'Grade 1' },
-      { student_id: 'STU002', password: bcrypt.hashSync('pass002', 10), grade: 'Grade 2' },
+      { student_id: 'STU001', password: bcrypt.hashSync('pass001', 10), grade: 'Grade 9 CT', house: 'Blue' },
+      { student_id: 'STU002', password: bcrypt.hashSync('pass002', 10), grade: 'Grade 10 DT 1', house: 'Green' },
     ],
   });
   writeJson(candidatesFile, {
     candidates: [
-      { candidate_id: 'G1-HC001', name: 'G1 House A', category: 'House', grade: 'Grade 1' },
-      { candidate_id: 'G1-HC002', name: 'G1 House B', category: 'House', grade: 'Grade 1' },
-      { candidate_id: 'G1-SC001', name: 'G1 School A', category: 'School', grade: 'Grade 1' },
-      { candidate_id: 'G1-SC002', name: 'G1 School B', category: 'School', grade: 'Grade 1' },
-      { candidate_id: 'G2-HC001', name: 'G2 House A', category: 'House', grade: 'Grade 2' },
-      { candidate_id: 'G2-SC001', name: 'G2 School A', category: 'School', grade: 'Grade 2' },
+      { candidate_id: 'HB001', name: 'Head Boy A', category: 'Head Boy', grade: 'All Grades' },
+      { candidate_id: 'HB002', name: 'Head Boy B', category: 'Head Boy', grade: 'All Grades' },
+      { candidate_id: 'BLUE001', name: 'Blue House A', category: 'Blue House Captain', grade: 'All Grades' },
+      { candidate_id: 'BLUE002', name: 'Blue House B', category: 'Blue House Captain', grade: 'All Grades' },
+      { candidate_id: 'GREEN001', name: 'Green House A', category: 'Green House Captain', grade: 'All Grades' },
     ],
   });
 
@@ -115,16 +114,19 @@ test('student can only vote for candidates in their server-side assigned grade',
     });
     assert.equal(candidates.status, 200);
     const candidateData = await candidates.json();
-    assert.equal(candidateData.grade, 'Grade 1');
-    assert.ok(candidateData.candidates.every((c) => c.grade === 'Grade 1'));
+    assert.equal(candidateData.grade, 'Grade 9 CT');
+    assert.equal(candidateData.house, 'Blue');
+    assert.ok(candidateData.candidates.some((c) => c.candidate_id === 'BLUE001'));
+    assert.ok(!candidateData.candidates.some((c) => c.candidate_id === 'GREEN001'));
 
     const spoof = await fetch(`${ctx.baseUrl}/vote`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Cookie: cookie },
       body: JSON.stringify({
-        house_candidate_id: 'G2-HC001',
-        school_candidate_id: 'G2-SC001',
-        grade: 'Grade 2',
+        votes: {
+          'Head Boy': 'HB001',
+          'Green House Captain': 'GREEN001',
+        },
       }),
     });
     assert.equal(spoof.status, 400);
@@ -133,8 +135,10 @@ test('student can only vote for candidates in their server-side assigned grade',
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Cookie: cookie },
       body: JSON.stringify({
-        house_candidate_id: 'G1-HC001',
-        school_candidate_id: 'G1-SC001',
+        votes: {
+          'Head Boy': 'HB001',
+          'Blue House Captain': 'BLUE001',
+        },
       }),
     });
     assert.equal(vote.status, 200);
@@ -144,9 +148,9 @@ test('student can only vote for candidates in their server-side assigned grade',
     const votes = db.prepare('SELECT * FROM votes ORDER BY id').all();
     db.close();
 
-    assert.equal(voter.grade, 'Grade 1');
+    assert.equal(voter.grade, 'Grade 9 CT');
     assert.equal(votes.length, 2);
-    assert.ok(votes.every((v) => v.grade === 'Grade 1'));
+    assert.ok(votes.every((v) => v.grade === 'Grade 9 CT'));
     assert.ok(votes.every((v) => v.timestamp.startsWith('anonymous-ballot-pool:')));
     assert.notEqual(voter.timestamp, votes[0].timestamp);
   } finally {

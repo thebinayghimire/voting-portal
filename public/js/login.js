@@ -18,6 +18,25 @@ function showBanner(msg) {
   el.classList.remove('hidden');
 }
 
+function setupPasswordToggle() {
+  const passwordInput = $('password');
+  const toggle = $('password-toggle');
+  if (!passwordInput || !toggle) return;
+
+  const eyeIcon = toggle.querySelector('.icon-eye');
+  const eyeOffIcon = toggle.querySelector('.icon-eye-off');
+
+  toggle.addEventListener('click', () => {
+    const isVisible = passwordInput.type === 'text';
+    passwordInput.type = isVisible ? 'password' : 'text';
+    toggle.setAttribute('aria-label', isVisible ? 'Show password' : 'Hide password');
+    toggle.setAttribute('aria-pressed', String(!isVisible));
+    eyeIcon?.classList.toggle('hidden', !isVisible);
+    eyeOffIcon?.classList.toggle('hidden', isVisible);
+    passwordInput.focus();
+  });
+}
+
 async function checkElectionStatus() {
   try {
     const res = await fetch('/election/status');
@@ -71,9 +90,11 @@ async function handleLogin() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  setupPasswordToggle();
   checkElectionStatus();
   $('login-btn').addEventListener('click', handleLogin);
   document.addEventListener('keydown', (e) => {
+    if (e.target === $('password-toggle')) return;
     if (e.key === 'Enter') handleLogin();
   });
 });

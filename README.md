@@ -146,11 +146,14 @@ Each student must have:
 {
   "student_id": "STU001",
   "password": "$2b$10$...",
-  "grade": "Grade 1"
+  "grade": "Grade 9 CT",
+  "house": "Blue"
 }
 ```
 
-Valid grades are `Grade 1` through `Grade 10`.
+Valid grades are `Grade 9 CT`, `Grade 9 CE`, `Grade 10 DT 1`, `Grade 10 DT 2`, and `Teacher`.
+For commands, the roster editor also accepts short aliases: `CT`, `CE`, `DT1`, and `DT2`.
+Student houses are `Blue`, `Green`, `Red`, and `Yellow`.
 
 Rotate all student passwords before a real election:
 
@@ -174,8 +177,9 @@ Manage the roster:
 
 ```bash
 npm run students -- list
-npm run students -- add STU101 "Grade 10" TempPass123
-npm run students -- update STU101 --grade "Grade 9" --password NewPass123
+npm run students -- add STU101 "Grade 10 DT 1" TempPass123 --house Blue
+npm run students -- add STU102 DT2 TempPass123 --house Red
+npm run students -- update STU101 --grade "Grade 9 CT" --password NewPass123 --house Green
 npm run students -- remove STU101
 ```
 
